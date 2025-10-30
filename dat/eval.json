@@ -5,14 +5,14 @@
     "label": "NNUE",
     "name": "Neural Network Updated Efficiently",
     "overview" : "",
-    "url": ""
+    "url": "https://www.chessprogramming.org/NNUE"
   },
   {
     "id": "hce",
     "label": "HCE",
     "name": "Hand Crafted Evaluation (tuned)",
     "overview" : "",
-    "url": ""
+    "url": "https://www.chessprogramming.org/Evaluation"
   },
   {
     "id": "nn",

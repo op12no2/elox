@@ -39,6 +39,21 @@
       .tabulator .tabulator-cell.tabulator-sorted-secondary {
         background-color: #fffbe6 !important; /* lighter for secondary */
       }
+
+/* ----- Engine link styling ----- */
+
+/* Make table cells normal unless otherwise overwritten */
+//.tabulator-cell {
+//  cursor: text;
+//}
+
+/* Default state: look like normal text */
+.tabulator-cell[tabulator-field="engine"] a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
     </style>
   </head>
 
@@ -106,8 +121,7 @@
                 multiSort: true,
                 multiSortMode: "client",
                 initialSort: [
-                  { column: "engine", dir: "asc" },
-                  { column: "build", dir: "desc" },
+                  { column: "ccrl40", dir: "desc" }
                 ],
                 placeholder: "No data available",
                 columnDefaults: { headerFilter: "input", headerSort: true },

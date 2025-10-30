@@ -11,28 +11,29 @@ Aggregated chess engine ratings. Experimental. Feasability test. Design choice -
 
 [dat/search.json](https://github.com/op12no2/elox/blob/main/dat/search.json) is a list of search techniques maintained by hand.
 
-dat/ratings is a directory containing rating values for each source listed in in sources.json; e.g. [ccrl40.json](https://github.com/op12no2/elox/blob/main/dat/ratings/ccrl40.json). These can be maintained by web scraping. Currently two have been created by hand with a few of values.
+dat/ratings is a directory containing elo values for each rating source listed in in sources.json; e.g. [ccrl40.json](https://github.com/op12no2/elox/blob/main/dat/ratings/ccrl40.json). These can be maintained by web scraping. Currently two have been created by hand with a few values.
 
-Ratings in these files are of the form: engine, build, elo, date.
+Rows are displayed for each unique engine+build combination flatten.js finds accross all the rating value files. Latest values only at present.
 
-Rows are displayed for each engine+build combination flatten.js finds accross all the sources. Latest values only at present.
+Columns are displayed for engine properties and each rating source.
 
-Columns are displayed for engine peoperties and each rating source.
+i.e. src/flatten.js creates a sparse matrix.
 
-To add a new rating source just tweak sources.json and add a new file in dat/ratings and everythign else is auto (a new column will appear). Would also need a new web scraper to get the values in src unless maintained by hand.
+To add a new rating source just tweak sources.json and add a new file in dat/ratings and everythign else is auto (a new column will appear and a new row will appear if the build is new). Would also need a new web scraper to get the values in src unless maintained by hand.
 
 Columns can be sorted and filtered to find the best HCE or MCTS engine easily for example. Multi column sort.
 
 flatten.js can be auto-run as an action whenever one of the data files changes.
 
-I think the build needs to be concatenated to the engine name to create one column.
+Notes
 
+I think the build needs to be concatenated to the engine name to create one column.
 
 Obviously the page would be far richer than it is now with approprate links and tooltips etc.
 
 Should the rating values include number of games?
 
-What other engines properties would be useful columns? datagen for example?
+What other engines properties would be useful columns? "datagen" for example? How?
 
 Is this useful at all?
 

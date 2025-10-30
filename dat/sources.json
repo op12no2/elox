@@ -1,1 +1,18 @@
 
+[
+  {
+    "id": "ccrl40",
+    "label": "CCRL-40",
+    "name": "CCRL 40/15",
+    "overview": "",
+    "url": "https://computerchess.org.uk/ccrl/4040/"
+  },
+  {
+    "id": "ccrlb",
+    "label": "CCRL-B",
+    "name": "CCRL Blitz",
+    "overview": "",
+    "url": "https://computerchess.org.uk/ccrl/404/"
+  }
+]
+

@@ -1,0 +1,48 @@
+
+[
+  {
+    "id": "lozza",
+    "label": "Lozza",
+    "name": "Lozza",
+    "overview" : "",
+    "url": "https://github.com/op12no2/lozza",
+    "country": "UK",
+    "language": "C",
+    "eval-id": "nnue",
+    "search-id": "pvs"
+  },
+  {
+    "id": "cwtch",
+    "label": "Cwtch",
+    "name": "Cwtch",
+    "overview" : "",
+    "url": "https://github.com/op12no2/cwtch",
+    "country": "UK",
+    "language": "C",
+    "eval-id": "nnue",
+    "search-id": "pvs"
+  },
+  {
+    "id": "sirius",
+    "label": "Sirius",
+    "name": "Sirius",
+    "overview" : "",
+    "url": "https://github.com/mcthouacbb/Sirius",
+    "country": "",
+    "language": "Rust",
+    "eval-id": "hce",
+    "search-id": "pvs"
+  },
+  {
+    "id": "princhess",
+    "label": "Princhess",
+    "name": "Princhess",
+    "overview" : "",
+    "url": "https://github.com/princesslana/princhess",
+    "country": "AUZ",
+    "language": "Rust",
+    "eval-id": "nn",
+    "search-id": "mcts"
+  }
+]
+

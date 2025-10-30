@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": "pvs",
+    "label": "PVS",
+    "name": "Principal Variation Search",
+    "overview": "",
+    "url": "https://www.chessprogramming.org/Principal_Variation_Search"
+  },
+  {
+    "id": "mcts",
+    "label": "MCTS",
+    "name": "Monte Carlo Tree Search",
+    "overview": "",
+    "url": "https://www.chessprogramming.org/Monte-Carlo_Tree_Search"
+  }
+]
+
+

@@ -1,0 +1,25 @@
+
+[
+  {
+    "id": "nnue",
+    "label": "NNUE",
+    "name": "Neural Network Updated Efficiently",
+    "overview" : "",
+    "url": ""
+  },
+  {
+    "id": "hce",
+    "label": "HCE",
+    "name": "Hand Crafted Evaluation (tuned)",
+    "overview" : "",
+    "url": ""
+  },
+  {
+    "id": "nn",
+    "label": "NN",
+    "name": "Neural Network",
+    "overview" : "",
+    "url": ""
+  }
+]
+

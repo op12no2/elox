@@ -7,6 +7,8 @@ Feasability test.
 
 Design choice - all text data, easily collaborative.
 
+Oops - multi-column sort is broken - the whole point of the exercise for me - brilliant :)
+
 [index.htm](https://op12no2.github.io/elox) is generated from the data in /dat/* via src/flatten.js and template.htm.
 
 [data/engines.json](https://github.com/op12no2/elox/blob/main/dat/engines.json) is a list of engines - created and maintaind by hand but automation possible.

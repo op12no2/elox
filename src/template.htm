@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elox Aggregated Chess Engine Ratings</title>
+
+  <!-- Tabulator CSS (CDN) -->
+  <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+  <style>
+    /* Clean, minimal styling */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 18px;
+      color: #111;
+    }
+    header { margin-bottom: 12px; }
+    h1 { font-size: 1.25rem; margin: 0 0 6px 0; }
+    p.lead { margin: 0 0 10px 0; color: #444; font-size: 0.95rem; }
+
+    #table-wrap { margin-top: 12px;}
+    #table { min-height: 300px; }
+
+    .small { font-size: 0.85rem; color: #666; }
+
+    /* right-align numeric cells */
+    .tabulator-cell.numeric { text-align: right; }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Elox - Aggregated Chess Engine Ratings</h1>
+    <p class="lead">
+      Use the column headers to filter and/or sort.
+      Hold <kbd>Shift</kbd> for multi-column sort.
+    </p>
+  </header>
+
+  <main>
+    <div id="table-wrap">
+      <div id="table"></div>
+    </div>
+
+    <!-- DATA -->
+
+    <!-- Tabulator JS (CDN) -->
+    <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+
+    <script>
+    // Robust Tabulator init: wait for Tabulator to load, retry a few times, and log status.
+    (function () {
+      const MAX_RETRIES = 50;
+      const RETRY_INTERVAL_MS = 100;
+      let tries = 0;
+
+      function init() {
+        // safety: confirm that our table data exists
+        if (!window.__TABLE_DATA__) {
+          console.error('ELOX: table data (window.__TABLE_DATA__) not found. Did you regenerate index.htm?');
+          document.getElementById('table').innerText = 'No table data — index.htm not generated.';
+          return;
+        }
+
+        if (typeof window.Tabulator === 'undefined') {
+          tries++;
+          if (tries > MAX_RETRIES) {
+            console.error('ELOX: Tabulator library not found after retries. Check CDN loading or network.');
+            document.getElementById('table').innerText = 'Failed to load Tabulator.';
+            return;
+          }
+          // wait a bit and retry
+          //console.log(`ELOX: Tabulator not ready, retry ${tries}/${MAX_RETRIES}`);
+          setTimeout(init, RETRY_INTERVAL_MS);
+          return;
+        }
+
+        // At this point Tabulator is available and data exists.
+        try {
+          console.log('ELOX: Initializing Tabulator with', window.__TABLE_DATA__.rows.length, 'rows and', window.__TABLE_DATA__.columns.length, 'columns.');
+          const table = new Tabulator('#table', {
+            data: window.__TABLE_DATA__.rows,
+            columns: window.__TABLE_DATA__.columns,
+            layout: 'fitColumns',
+            movableColumns: true,
+            resizableRows: false,
+            pagination: false,
+            height: '70vh',
+            multiSort: true,
+            initialSort: [{ column: 'engine', dir: 'asc' }, { column: 'build', dir: 'desc' }],
+            placeholder: 'No data available',
+            columnDefaults: {
+              headerFilter: 'input'
+            }
+          });
+
+          // helper to write sort/filter state into URL
+          function encodeStateToURL() {
+            try {
+              const sorters = table.getSorters();
+              const filters = table.getFilters();
+              const state = { sorters, filters };
+              const qs = encodeURIComponent(JSON.stringify(state));
+              const u = new URL(window.location.href);
+              u.searchParams.set('state', qs);
+              history.replaceState(null, '', u.toString());
+            } catch (e) {
+              console.warn('ELOX: failed to encode state to URL', e);
+            }
+          }
+
+          table.on('dataSorted', encodeStateToURL);
+          table.on('dataFiltered', encodeStateToURL);
+
+          // restore state from URL if present
+          (function restoreStateFromURL() {
+            try {
+              const u = new URL(window.location.href);
+              const s = u.searchParams.get('state');
+              if (!s) return;
+              const obj = JSON.parse(decodeURIComponent(s));
+              if (obj.sorters) table.setSort(obj.sorters);
+              if (obj.filters) table.setFilter(obj.filters);
+            } catch (e) {
+              // non-fatal
+              console.warn('ELOX: failed to restore state from URL', e);
+            }
+          })();
+
+        } catch (err) {
+          console.error('ELOX: error while creating Tabulator:', err);
+          document.getElementById('table').innerText = 'Failed to initialize table (see console).';
+        }
+      }
+
+      // Start init sequence after DOM load — in case script was parsed early
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+    </script>
+
+  </main>
+</body>
+</html>
+

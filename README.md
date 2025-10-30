@@ -25,19 +25,19 @@ Columns can be sorted and filtered to find the best HCE or MCTS engine easily fo
 
 flatten.js can be auto-run as an action whenever one of the data files changes.
 
-Notes
+#### Notes
 
 I think the build needs to be concatenated to the engine name to create one column.
 
 Obviously the page would be far richer than it is now with approprate links and tooltips etc.
 
-Should the rating values include number of games?
+Should the rating values include number of games (games column)?
 
-What other engines properties would be useful columns? "datagen" for example? How?
+What other engines properties would be useful columns? "datagen" for example? How to breakdown?
 
 Is this useful at all?
 
-CCRL is easy to scrape - are other lists practical too?
+CCRL is easy to scrape - are other lists practical too? 
 
 Scrapers can be run auto every day or something?
 

@@ -13,7 +13,7 @@ Design choice - all text data, easily collaborative.
 
 [dat/sources.json](https://github.com/op12no2/elox/blob/main/dat/sources.json) is a list of rating sources maintained by hand.
 
-[dat/eval.json](https://github.com/op12no2/elox/blob/main/dat/eval.json) is a list of evaluation techniques maintained by hand. This could be a challenge to summarise in a single field? There again the file contains an overview that would be avilable somehow...
+[dat/eval.json](https://github.com/op12no2/elox/blob/main/dat/eval.json) is a list of evaluation techniques maintained by hand. This could be a challenge to summarise in a single field? There again the file contains an overview field currently unused.
 
 [dat/search.json](https://github.com/op12no2/elox/blob/main/dat/search.json) is a list of search techniques maintained by hand.
 

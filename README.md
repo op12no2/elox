@@ -27,7 +27,6 @@ i.e. src/flatten.js creates a sparse matrix.
 
 To add a new rating source just tweak sources.json and add a new file in dat/ratings and everythign else is auto (a new column will appear and a new row will appear if the build is new). Would also need a new web scraper unless maintained by hand.
 
-
 #### Notes
 
 Columns can be sorted and filtered to find the best HCE or MCTS engine easily for example. Multi column sort.
@@ -44,7 +43,10 @@ CCRL is easy to scrape - are other lists practical too?
 
 Scrapers can be run auto every day or something?
 
-Need to be able to get a URL to current UI options.
+Need to be able to get a URL to current UI options
 
 The scraper script should be a field in sources.json.
 
+#### Problems
+
+Engine column does not collate beause it contains links. Change to raw data and tabulator link feature.

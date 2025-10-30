@@ -36,9 +36,11 @@ flatten.js can be auto-run as an action whenever one of the data files changes.
 
 Obviously the page would be far richer than it is now with approprate links and tooltips etc.
 
-What other engines properties would be useful columns? "datagen" for example? How to breakdown?
+"Data" column? How to breakdown? Selfgen, Leela, ...??? But also needs boot info...???
 
-Is this useful at all?
+"Trainer" column? e.g. bullet.
+
+Is this project useful at all?
 
 CCRL is easy to scrape - are other lists practical too? 
 

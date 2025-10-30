@@ -39,6 +39,21 @@
       .tabulator .tabulator-cell.tabulator-sorted-secondary {
         background-color: #fffbe6 !important; /* lighter for secondary */
       }
+
+/* ----- Engine link styling ----- */
+
+/* Make table cells normal unless otherwise overwritten */
+//.tabulator-cell {
+//  cursor: text;
+//}
+
+/* Default state: look like normal text */
+.tabulator-cell[tabulator-field="engine"] a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
     </style>
   </head>
 
@@ -61,7 +76,8 @@
     {
       "field": "engine",
       "title": "Engine",
-      "headerFilter": "input"
+      "headerFilter": "input",
+      "formatter": "html"
     },
     {
       "field": "build",
@@ -70,7 +86,7 @@
     },
     {
       "field": "country",
-      "title": "Nat",
+      "title": "Country",
       "headerFilter": "input"
     },
     {
@@ -105,8 +121,21 @@
   ],
   "rows": [
     {
+      "engine-id": "sirius",
+      "engine": "<a href=\"https://github.com/mcthouacbb/Sirius\" title=\"https://github.com/mcthouacbb/Sirius\" target=\"_blank\" rel=\"noopener noreferrer\">Sirius</a>",
+      "engine-url": "https://github.com/mcthouacbb/Sirius",
+      "build": "9.0",
+      "country": "",
+      "language": "Rust",
+      "eval": "HCE",
+      "search": "PVS",
+      "ccrl40": 3448,
+      "ccrlb": 3535
+    },
+    {
       "engine-id": "cwtch",
-      "engine": "Cwtch",
+      "engine": "<a href=\"https://github.com/op12no2/cwtch\" title=\"https://github.com/op12no2/cwtch\" target=\"_blank\" rel=\"noopener noreferrer\">Cwtch</a>",
+      "engine-url": "https://github.com/op12no2/cwtch",
       "build": "2",
       "country": "UK",
       "language": "C",
@@ -117,7 +146,8 @@
     },
     {
       "engine-id": "cwtch",
-      "engine": "Cwtch",
+      "engine": "<a href=\"https://github.com/op12no2/cwtch\" title=\"https://github.com/op12no2/cwtch\" target=\"_blank\" rel=\"noopener noreferrer\">Cwtch</a>",
+      "engine-url": "https://github.com/op12no2/cwtch",
       "build": "3",
       "country": "UK",
       "language": "C",
@@ -128,7 +158,8 @@
     },
     {
       "engine-id": "lozza",
-      "engine": "Lozza",
+      "engine": "<a href=\"https://github.com/op12no2/lozza\" title=\"https://github.com/op12no2/lozza\" target=\"_blank\" rel=\"noopener noreferrer\">Lozza</a>",
+      "engine-url": "https://github.com/op12no2/lozza",
       "build": "7",
       "country": "UK",
       "language": "JS",
@@ -139,7 +170,8 @@
     },
     {
       "engine-id": "lozza",
-      "engine": "Lozza",
+      "engine": "<a href=\"https://github.com/op12no2/lozza\" title=\"https://github.com/op12no2/lozza\" target=\"_blank\" rel=\"noopener noreferrer\">Lozza</a>",
+      "engine-url": "https://github.com/op12no2/lozza",
       "build": "8",
       "country": "UK",
       "language": "JS",
@@ -150,7 +182,8 @@
     },
     {
       "engine-id": "princhess",
-      "engine": "Princhess",
+      "engine": "<a href=\"https://github.com/princesslana/princhess\" title=\"https://github.com/princesslana/princhess\" target=\"_blank\" rel=\"noopener noreferrer\">Princhess</a>",
+      "engine-url": "https://github.com/princesslana/princhess",
       "build": "0.19.0",
       "country": "AUZ",
       "language": "Rust",
@@ -161,7 +194,8 @@
     },
     {
       "engine-id": "princhess",
-      "engine": "Princhess",
+      "engine": "<a href=\"https://github.com/princesslana/princhess\" title=\"https://github.com/princesslana/princhess\" target=\"_blank\" rel=\"noopener noreferrer\">Princhess</a>",
+      "engine-url": "https://github.com/princesslana/princhess",
       "build": "0.21.0",
       "country": "AUZ",
       "language": "Rust",
@@ -169,17 +203,6 @@
       "search": "MCTS",
       "ccrl40": null,
       "ccrlb": 3349
-    },
-    {
-      "engine-id": "sirius",
-      "engine": "Sirius",
-      "build": "9.0",
-      "country": "",
-      "language": "Rust",
-      "eval": "HCE",
-      "search": "PVS",
-      "ccrl40": 3448,
-      "ccrlb": 3535
     }
   ]
 };</script>
@@ -232,8 +255,7 @@
                 multiSort: true,
                 multiSortMode: "client",
                 initialSort: [
-                  { column: "engine", dir: "asc" },
-                  { column: "build", dir: "desc" },
+                  { column: "ccrl40", dir: "desc" }
                 ],
                 placeholder: "No data available",
                 columnDefaults: { headerFilter: "input", headerSort: true },

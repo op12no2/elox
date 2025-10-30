@@ -19,7 +19,7 @@ Design choice - all text data, easily collaborative.
 
 dat/ratings is a directory containing a file of elo values for each rating source listed in sources.json; e.g. [ccrl40.json](https://github.com/op12no2/elox/blob/main/dat/ratings/ccrl40.json). These can be maintained by web scraping and can be additive since the values are dated. Currently two have been created by hand with a few values.
 
-Rows are displayed for each unique engine+build combination that flatten.js finds accross all the rating value files. Latest values only at present.
+Rows are displayed for each unique engine+build combination that flatten.js finds accross all the elo value files. Latest values only at present.
 
 Columns are displayed for engine properties and each rating source.
 
@@ -33,8 +33,6 @@ To add a new rating source just tweak sources.json and add a new file in dat/rat
 Columns can be sorted and filtered to find the best HCE or MCTS engine easily for example. Multi column sort.
 
 flatten.js can be auto-run as an action whenever one of the data files changes.
-
-Obviously the page would be far richer than it is now with approprate links and tooltips etc.
 
 "Data" column? How to breakdown? Selfgen, Leela, ...??? But also needs boot info...???
 

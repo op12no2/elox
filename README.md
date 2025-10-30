@@ -1,5 +1,11 @@
-# elox
-Aggregated chess engine ratings. Experimental. Feasability test. Design choice - all text data, easily collaborative.
+## Elox
+#### Aggregated chess engine ratings. 
+
+Experimental. 
+
+Feasability test. 
+
+Design choice - all text data, easily collaborative.
 
 [index.htm](https://op12no2.github.io/elox) is generated from the data in /dat/* via src/flatten.js and template.htm.
 

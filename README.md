@@ -3,15 +3,15 @@ Aggregated chess engine ratings. Experimental. Feasability test. Design choice -
 
 [index.htm](https://op12no2.github.io/elox) is generated from the data in /dat/* via src/flatten.js and template.htm.
 
-data/engines.json is a list of engines - created and maintaind by hand but automation possible.
+[data/engines.json](https://github.com/op12no2/elox/blob/main/dat/engines.json) is a list of engines - created and maintaind by hand but automation possible.
 
-dat/sources.json is a list of rating sources maintained by hand.
+[dat/sources.json](https://github.com/op12no2/elox/blob/main/dat/sources.json) is a list of rating sources maintained by hand.
 
-dat/eval.json is a list of evaluation techniques maintained by hand.
+[dat/eval.json](https://github.com/op12no2/elox/blob/main/dat/eval.json) is a list of evaluation techniques maintained by hand.
 
-dat/search.json is a list of search techniques maintained by hand.
+[dat/search.json](https://github.com/op12no2/elox/blob/main/dat/search.json) is a list of search techniques maintained by hand.
 
-dat/ratings is a directory containing rating values for each source in sources.json; e.g. ccrl40.json. These can be maintained by web scraping. Currently two have been created by hand with a few of values.
+dat/ratings is a directory containing rating values for each source listed in in sources.json; e.g. [ccrl40.json](https://github.com/op12no2/elox/blob/main/dat/ratings/ccrl40.json). These can be maintained by web scraping. Currently two have been created by hand with a few of values.
 
 Ratings in these files are of the form: engine, build, elo, date.
 

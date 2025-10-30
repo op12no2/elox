@@ -43,5 +43,5 @@ Scrapers can be run auto every day or something?
 
 Need to be able to get a URL to current UI options.
 
-
+The scraper script should be a field in sources.json.
 

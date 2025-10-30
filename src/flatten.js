@@ -153,15 +153,38 @@ columns.push({ field: 'language', title: 'Lang',    headerFilter: 'input' });
 columns.push({ field: 'eval',     title: 'Eval',    headerFilter: 'input' });
 columns.push({ field: 'search',   title: 'Search',  headerFilter: 'input' });
 
+//for (const s of sourcesArr) {
+  //columns.push({
+    //field: s.id,
+    //title: s.label ?? s.name ?? s.id,
+    //hozAlign: 'right',
+    //sorter: 'number',
+    //headerFilter: 'input'
+  //});
+//}
+
 for (const s of sourcesArr) {
+  const icon = "&#9432;"; // (info inside circle)
+  const fid   = s.id;
+  const label = s.label ?? s.name ?? fid;
+  const url   = s.url ?? "";
+  const tip   = s.overview || s.name || label;
+
+  // Title HTML: left label + right “?” link (click stops sort)
+  const titleHtml = url
+    ? `<div class="hdr"><span class="hdr-text">${escapeHtml(label)}</span><a class="hdr-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="Open ${escapeHtml(tip)}" onclick="event.stopPropagation();">${icon}</a></div>`
+    : `<div class="hdr"><span class="hdr-text">${escapeHtml(label)}</span></div>`;
+
   columns.push({
-    field: s.id,
-    title: s.label ?? s.name ?? s.id,
+    field: fid,
+    title: titleHtml,          // HTML title
     hozAlign: 'right',
     sorter: 'number',
-    headerFilter: 'input'
+    headerFilter: 'input',
+    headerSort: true           // keep sorting on header text
   });
 }
+
 // Any extra source fields discovered in rows but not in sources.json
 const staticFields = new Set(['engine-id','engine','engine-url','build','country','language','eval','search']);
 const extra = new Set();

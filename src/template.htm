@@ -54,6 +54,29 @@
   cursor: pointer;
 }
 
+/* Flex layout for header titles with right-aligned help/link icon */
+.tabulator-col .hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.tabulator-col .hdr-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tabulator-col .hdr-link {
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.6;
+}
+.tabulator-col .hdr-link:hover {
+  opacity: 1;
+}
+
+
+
     </style>
   </head>
 

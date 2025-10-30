@@ -1,50 +1,62 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elox Aggregated Chess Engine Ratings</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elox Aggregated Chess Engine Ratings</title>
 
-  <!-- Tabulator CSS (CDN) -->
-  <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+    <!-- Tabulator CSS (CDN) -->
+    <link
+      href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    /* Clean, minimal styling */
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      margin: 18px;
-      color: #111;
-    }
-    header { margin-bottom: 12px; }
-    h1 { font-size: 1.25rem; margin: 0 0 6px 0; }
-    p.lead { margin: 0 0 10px 0; color: #444; font-size: 0.95rem; }
+    <style>
+          /* Clean, minimal styling */
+          body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            margin: 18px;
+            color: #111;
+          }
+          header { margin-bottom: 12px; }
+          h1 { font-size: 1.25rem; margin: 0 0 6px 0; }
+          p.lead { margin: 0 0 10px 0; color: #444; font-size: 0.95rem; }
 
-    #table-wrap { margin-top: 12px;}
-    #table { min-height: 300px; }
+          #table-wrap { margin-top: 12px;}
+          #table { min-height: 300px; }
 
-    .small { font-size: 0.85rem; color: #666; }
+          .small { font-size: 0.85rem; color: #666; }
 
-    /* right-align numeric cells */
-    .tabulator-cell.numeric { text-align: right; }
+          /* right-align numeric cells */
+          .tabulator-cell.numeric { text-align: right; }
 
-  </style>
-</head>
+      /* Optional: distinguish primary vs secondary sort */
+      .tabulator-col[aria-sort="ascending"] .tabulator-col-title,
+      .tabulator-col[aria-sort="descending"] .tabulator-col-title {
+        background-color: #fff3b0 !important; /* slightly stronger yellow for primary */
+      }
 
-<body>
-  <header>
-    <h1>Elox - Aggregated Chess Engine Ratings</h1>
-    <p class="lead">
-      Use the column headers to filter and/or sort.
-      Hold <kbd>Shift</kbd> for multi-column sort.
-    </p>
-  </header>
+      .tabulator .tabulator-cell.tabulator-sorted-secondary {
+        background-color: #fffbe6 !important; /* lighter for secondary */
+      }
+    </style>
+  </head>
 
-  <main>
-    <div id="table-wrap">
-      <div id="table"></div>
-    </div>
+  <body>
+    <header>
+      <h1>Elox - Aggregated Chess Engine Ratings</h1>
+      <p class="lead">
+        Use the column headers to filter and/or sort. Hold <kbd>Shift</kbd> for
+        multi-column sort.
+      </p>
+    </header>
 
-    <script>window.__TABLE_DATA__ = {
+    <main>
+      <div id="table-wrap">
+        <div id="table"></div>
+      </div>
+
+      <script>window.__TABLE_DATA__ = {
   "columns": [
     {
       "field": "engine",
@@ -172,149 +184,176 @@
   ]
 };</script>
 
-    <!-- Tabulator JS (CDN) -->
-    <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+      <!-- Tabulator JS (CDN) -->
+      <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
 
-<script>
-(function () {
-  const MAX_RETRIES = 50;
-  const RETRY_INTERVAL_MS = 100;
-  let tries = 0;
+      <script>
+        (function () {
+          const MAX_RETRIES = 50;
+          const RETRY_INTERVAL_MS = 100;
+          let tries = 0;
 
-  function init() {
-    if (!window.__TABLE_DATA__) {
-      console.error('ELOX: window.__TABLE_DATA__ missing (did flatten.js run?)');
-      document.getElementById('table').innerText = 'No table data � index.htm not generated.';
-      return;
-    }
+          function init() {
+            if (!window.__TABLE_DATA__) {
+              console.error(
+                "ELOX: window.__TABLE_DATA__ missing (did flatten.js run?)",
+              );
+              document.getElementById("table").innerText =
+                "No table data � index.htm not generated.";
+              return;
+            }
 
-    if (typeof window.Tabulator === 'undefined') {
-      tries++;
-      if (tries > MAX_RETRIES) {
-        console.error('ELOX: Tabulator failed to load from CDN.');
-        document.getElementById('table').innerText = 'Failed to load Tabulator.';
-        return;
-      }
-      setTimeout(init, RETRY_INTERVAL_MS);
-      return;
-    }
+            if (typeof window.Tabulator === "undefined") {
+              tries++;
+              if (tries > MAX_RETRIES) {
+                console.error("ELOX: Tabulator failed to load from CDN.");
+                document.getElementById("table").innerText =
+                  "Failed to load Tabulator.";
+                return;
+              }
+              setTimeout(init, RETRY_INTERVAL_MS);
+              return;
+            }
 
-    try {
-      console.log(`ELOX: Initializing Tabulator with ${window.__TABLE_DATA__.rows.length} rows.`);
+            try {
+              console.log(
+                `ELOX: Initializing Tabulator with ${window.__TABLE_DATA__.rows.length} rows.`,
+              );
 
-      const table = new Tabulator('#table', {
-        data: window.__TABLE_DATA__.rows,
-        columns: window.__TABLE_DATA__.columns,
-        layout: 'fitColumns',
-        movableColumns: true,
-        resizableRows: false,
-        pagination: false,
-        sortOrderReverse: true,
-        height: '70vh',
-        multiSort: true,
-        multiSortMode: 'client',
-        initialSort: [
-          { column: 'engine', dir: 'asc' },
-          { column: 'build', dir: 'desc' }
-        ],
-        placeholder: 'No data available',
-        columnDefaults: { headerFilter: 'input', headerSort: true }
-      });
+              const table = new Tabulator("#table", {
+                data: window.__TABLE_DATA__.rows,
+                columns: window.__TABLE_DATA__.columns,
+                layout: "fitColumns",
+                movableColumns: true,
+                resizableRows: false,
+                pagination: false,
+                sortOrderReverse: true,
+                height: "70vh",
+                multiSort: true,
+                multiSortMode: "client",
+                initialSort: [
+                  { column: "engine", dir: "asc" },
+                  { column: "build", dir: "desc" },
+                ],
+                placeholder: "No data available",
+                columnDefaults: { headerFilter: "input", headerSort: true },
+              });
 
-      // Helper: convert Tabulator sorters into plain serializable objects
-      function serializableSorters(rawSorters) {
-        if (!Array.isArray(rawSorters)) return [];
-        return rawSorters.map(s => {
-          // Tabulator may return {column: ColumnComponent, dir: 'asc'} or {field, dir}
-          if (s.field) return { field: s.field, dir: s.dir || s.order || 'asc' };
-          if (s.column && typeof s.column.getField === 'function') {
-            return { field: s.column.getField(), dir: s.dir || s.order || 'asc' };
+              // Helper: convert Tabulator sorters into plain serializable objects
+              function serializableSorters(rawSorters) {
+                if (!Array.isArray(rawSorters)) return [];
+                return rawSorters
+                  .map((s) => {
+                    // Tabulator may return {column: ColumnComponent, dir: 'asc'} or {field, dir}
+                    if (s.field)
+                      return { field: s.field, dir: s.dir || s.order || "asc" };
+                    if (s.column && typeof s.column.getField === "function") {
+                      return {
+                        field: s.column.getField(),
+                        dir: s.dir || s.order || "asc",
+                      };
+                    }
+                    // fallback: shallow copy
+                    return {
+                      field: s.field || null,
+                      dir: s.dir || s.order || "asc",
+                    };
+                  })
+                  .filter((x) => x.field); // only keep valid entries
+              }
+
+              // Helper: convert filters to plain form (they generally are already plain)
+              function serializableFilters(rawFilters) {
+                if (!Array.isArray(rawFilters)) return [];
+                return rawFilters
+                  .map((f) => {
+                    // Tabulator filter objects may have slightly different shapes; normalize to {field, type, value}
+                    return {
+                      field: f.field ?? f.column ?? null,
+                      type: f.type ?? f.operator ?? f.op ?? null,
+                      value: f.value ?? f.match ?? null,
+                    };
+                  })
+                  .filter((x) => x.field);
+              }
+
+              // Called after the table is fully built to attach listeners and restore state
+              function onTableBuilt() {
+                // Restore state from URL (if present)
+                (function restoreStateFromURL() {
+                  try {
+                    const u = new URL(window.location.href);
+                    const s = u.searchParams.get("state");
+                    if (!s) return;
+                    const obj = JSON.parse(decodeURIComponent(s));
+                    if (obj.sorters && Array.isArray(obj.sorters)) {
+                      // Table expects sorter array of {field, dir} (or Tabulator objects), so pass ours
+                      table.setSort(obj.sorters);
+                    }
+                    if (obj.filters && Array.isArray(obj.filters)) {
+                      // table.setFilter accepts a single filter or array; we pass array
+                      table.setFilter(obj.filters);
+                    }
+                  } catch (e) {
+                    console.warn(
+                      "ELOX: failed to restore table state from URL",
+                      e,
+                    );
+                  }
+                })();
+
+                // Attach listeners that encode *serializable* state to URL
+                function encodeStateToURL() {
+                  try {
+                    const rawSorters = table.getSorters(); // now safe � table is built
+                    const rawFilters = table.getFilters(); // safe
+                    const state = {
+                      sorters: serializableSorters(rawSorters),
+                      filters: serializableFilters(rawFilters),
+                    };
+                    const qs = encodeURIComponent(JSON.stringify(state));
+                    const u = new URL(window.location.href);
+                    u.searchParams.set("state", qs);
+                    history.replaceState(null, "", u.toString());
+                  } catch (e) {
+                    console.warn("ELOX: failed to encode state to URL", e);
+                  }
+                }
+
+                table.on("dataSorted", encodeStateToURL);
+                table.on("dataFiltered", encodeStateToURL);
+
+                // optional: debug header clicks for modifier keys (Shift/Ctrl/Meta)
+                table.on("headerClick", function (e, column) {
+                  console.log(
+                    "Header clicked:",
+                    column.getField?.() ?? column.getField,
+                    "shift:",
+                    e.shiftKey,
+                    "ctrl:",
+                    e.ctrlKey,
+                    "meta:",
+                    e.metaKey,
+                  );
+                });
+              }
+
+              // Wait for the tableBuilt event (fires when Tabulator has fully initialized)
+              table.on("tableBuilt", onTableBuilt);
+            } catch (err) {
+              console.error("ELOX: Tabulator init error:", err);
+              document.getElementById("table").innerText =
+                "Failed to initialize table (see console).";
+            }
           }
-          // fallback: shallow copy
-          return { field: s.field || null, dir: s.dir || s.order || 'asc' };
-        }).filter(x => x.field); // only keep valid entries
-      }
 
-      // Helper: convert filters to plain form (they generally are already plain)
-      function serializableFilters(rawFilters) {
-        if (!Array.isArray(rawFilters)) return [];
-        return rawFilters.map(f => {
-          // Tabulator filter objects may have slightly different shapes; normalize to {field, type, value}
-          return {
-            field: f.field ?? f.column ?? null,
-            type: f.type ?? f.operator ?? f.op ?? null,
-            value: f.value ?? f.match ?? null,
-          };
-        }).filter(x => x.field);
-      }
-
-      // Called after the table is fully built to attach listeners and restore state
-      function onTableBuilt() {
-        // Restore state from URL (if present)
-        (function restoreStateFromURL() {
-          try {
-            const u = new URL(window.location.href);
-            const s = u.searchParams.get('state');
-            if (!s) return;
-            const obj = JSON.parse(decodeURIComponent(s));
-            if (obj.sorters && Array.isArray(obj.sorters)) {
-              // Table expects sorter array of {field, dir} (or Tabulator objects), so pass ours
-              table.setSort(obj.sorters);
-            }
-            if (obj.filters && Array.isArray(obj.filters)) {
-              // table.setFilter accepts a single filter or array; we pass array
-              table.setFilter(obj.filters);
-            }
-          } catch (e) {
-            console.warn('ELOX: failed to restore table state from URL', e);
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+          } else {
+            init();
           }
         })();
-
-        // Attach listeners that encode *serializable* state to URL
-        function encodeStateToURL() {
-          try {
-            const rawSorters = table.getSorters();   // now safe � table is built
-            const rawFilters = table.getFilters();   // safe
-            const state = {
-              sorters: serializableSorters(rawSorters),
-              filters: serializableFilters(rawFilters)
-            };
-            const qs = encodeURIComponent(JSON.stringify(state));
-            const u = new URL(window.location.href);
-            u.searchParams.set('state', qs);
-            history.replaceState(null, '', u.toString());
-          } catch (e) {
-            console.warn('ELOX: failed to encode state to URL', e);
-          }
-        }
-
-        table.on('dataSorted', encodeStateToURL);
-        table.on('dataFiltered', encodeStateToURL);
-
-        // optional: debug header clicks for modifier keys (Shift/Ctrl/Meta)
-        table.on('headerClick', function (e, column) {
-          console.log('Header clicked:', column.getField?.() ?? column.getField, 'shift:', e.shiftKey, 'ctrl:', e.ctrlKey, 'meta:', e.metaKey);
-        });
-      }
-
-      // Wait for the tableBuilt event (fires when Tabulator has fully initialized)
-      table.on('tableBuilt', onTableBuilt);
-
-    } catch (err) {
-      console.error('ELOX: Tabulator init error:', err);
-      document.getElementById('table').innerText = 'Failed to initialize table (see console).';
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
-
-  </main>
-</body>
+      </script>
+    </main>
+  </body>
 </html>
-

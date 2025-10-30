@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 // src/flatten.js
-// Reads dat/* and dat/ratings/*.json, generates Tabulator columns+rows,
-// injects into src/template.htm (<!-- DATA -->), writes ./index.htm
 
 import fs from 'fs';
 import path from 'path';
@@ -21,7 +19,6 @@ function ensureDir(p) {
     console.error(`Missing dir: ${p}`); process.exit(1);
   }
 }
-// Minimal HTML escape for labels/titles/URLs inserted into anchors
 function escapeHtml(str) {
   if (str == null) return '';
   return String(str)
@@ -60,7 +57,6 @@ for (const fname of ratingFiles) {
   const filePath = path.join(RATINGS_DIR, fname);
   let sourceId = path.basename(fname, '.json');
 
-  // Try to map filename to a known source id case-insensitively
   if (!sourcesById.has(sourceId)) {
     const lower = sourceId.toLowerCase();
     const match = [...sourcesById.keys()].find(k => k.toLowerCase() === lower);
@@ -102,23 +98,20 @@ for (const fname of ratingFiles) {
   }
 }
 
-// Build rows for Tabulator
+// Build rows
 const rows = [];
 for (const { engineId, build, ratings } of rowsMap.values()) {
   const em = enginesById.get(engineId) || {};
   const label      = em.label ?? em.name ?? engineId;
   const engineUrl  = em.url ?? '';
-  const engineName = em.name ?? label;
-
-  // Engine cell as hyperlink (or plain text if URL missing)
   const engineHtml = engineUrl
     ? `<a href="${escapeHtml(engineUrl)}" title="${escapeHtml(engineUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
     : escapeHtml(label);
 
   const rowObj = {
     'engine-id': engineId,
-    engine:   engineHtml, // HTML anchor rendered via formatter:'html'
-    'engine-url': engineUrl, // keep raw URL as a hidden/aux field if needed later
+    engine: engineHtml,
+    'engine-url': engineUrl,
     build,
     country:  em.country ?? '',
     language: em.language ?? '',
@@ -126,62 +119,74 @@ for (const { engineId, build, ratings } of rowsMap.values()) {
     search:   searchLabelById.get(em['search-id']) ?? em['search-id']   ?? ''
   };
 
-  // Fill source columns (sparse matrix)
   for (const [sid] of sourcesById.entries()) {
     rowObj[sid] = ratings.has(sid) ? ratings.get(sid).elo : null;
   }
-  // Include any extra source ids present in files but not in sources.json
   for (const [sid, r] of ratings.entries()) {
     if (!(sid in rowObj)) rowObj[sid] = r ? r.elo : null;
   }
-
   rows.push(rowObj);
 }
 
-// Stable output order
 rows.sort((a, b) =>
   (a.engine || '').localeCompare(b.engine || '') ||
   (a.build  || '').localeCompare(b.build  || '')
 );
 
-// Build columns for Tabulator
+// Build columns
 const columns = [];
-columns.push({ field: 'engine',   title: 'Engine',  headerFilter: 'input', formatter: 'html' });
+
+// Build a header title with a right-aligned info icon that calls ELOX_showMeta(kind)
+function headerWithInfo(label, kind) {
+  const icon = '&#9432;'; // ?
+  const js = `ELOX_showMeta('${kind}')`;
+  return `<div class="hdr">
+            <span class="hdr-text">${escapeHtml(label)}</span>
+            <a class="hdr-link" href="#"
+               onclick="event.preventDefault(); event.stopPropagation(); ${js}">${icon}</a>
+          </div>`;
+}
+
+// Eval + Search with modal icon
+columns.push({
+  field: 'engine',
+  title: 'Engine',
+  headerFilter: 'input',
+  formatter: 'html'
+});
 columns.push({ field: 'build',    title: 'Build',   headerFilter: 'input' });
 columns.push({ field: 'country',  title: 'Country', headerFilter: 'input' });
 columns.push({ field: 'language', title: 'Lang',    headerFilter: 'input' });
-columns.push({ field: 'eval',     title: 'Eval',    headerFilter: 'input' });
-columns.push({ field: 'search',   title: 'Search',  headerFilter: 'input' });
+columns.push({
+  field: 'eval',
+  title: headerWithInfo('Eval', 'eval'),
+  headerFilter: 'input',
+  headerSort: true
+});
+columns.push({
+  field: 'search',
+  title: headerWithInfo('Search', 'search'),
+  headerFilter: 'input',
+  headerSort: true
+});
 
-//for (const s of sourcesArr) {
-  //columns.push({
-    //field: s.id,
-    //title: s.label ?? s.name ?? s.id,
-    //hozAlign: 'right',
-    //sorter: 'number',
-    //headerFilter: 'input'
-  //});
-//}
-
+// Source columns with right-aligned ? hyperlink to rating site
 for (const s of sourcesArr) {
-  const icon = "&#9432;"; // (info inside circle)
   const fid   = s.id;
   const label = s.label ?? s.name ?? fid;
+  const tip   = s.name ?? s.label ?? fid;
   const url   = s.url ?? "";
-  const tip   = s.overview || s.name || label;
-
-  // Title HTML: left label + right “?” link (click stops sort)
   const titleHtml = url
-    ? `<div class="hdr"><span class="hdr-text">${escapeHtml(label)}</span><a class="hdr-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="Open ${escapeHtml(tip)}" onclick="event.stopPropagation();">${icon}</a></div>`
+    ? `<div class="hdr"><span class="hdr-text">${escapeHtml(label)}</span><a class="hdr-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="open ${tip}"onclick="event.stopPropagation();">&#9432;</a></div>`
     : `<div class="hdr"><span class="hdr-text">${escapeHtml(label)}</span></div>`;
 
   columns.push({
     field: fid,
-    title: titleHtml,          // HTML title
+    title: titleHtml,
     hozAlign: 'right',
     sorter: 'number',
     headerFilter: 'input',
-    headerSort: true           // keep sorting on header text
+    headerSort: true
   });
 }
 
@@ -197,8 +202,9 @@ for (const e of [...extra].sort()) {
   columns.push({ field: e, title: e, hozAlign: 'right', sorter: 'number', headerFilter: 'input' });
 }
 
-// Compose output payload
-const out = { columns, rows };
+// Compose output payloads
+const out  = { columns, rows };
+const meta = { eval: evalArr, search: searchArr };
 
 // Inject into template and write index.htm
 let tmpl = fs.readFileSync(TEMPLATE_PATH, 'utf8');
@@ -207,7 +213,10 @@ if (!tmpl.includes(marker)) {
   console.error('Template missing marker "<!-- DATA -->"'); process.exit(1);
 }
 
-const insert = `<script>window.__TABLE_DATA__ = ${JSON.stringify(out, null, 2)};</script>`;
+const insert =
+  `<script>window.__TABLE_DATA__ = ${JSON.stringify(out,  null, 2)};</script>\n` +
+  `<script>window.__META__      = ${JSON.stringify(meta, null, 2)};</script>`;
+
 const result = tmpl.replace(marker, insert);
 
 fs.writeFileSync(OUT_PATH, result, 'utf8');

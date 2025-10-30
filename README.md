@@ -11,7 +11,7 @@ Aggregated chess engine ratings. Experimental. Feasability test. Design choice -
 
 [dat/search.json](https://github.com/op12no2/elox/blob/main/dat/search.json) is a list of search techniques maintained by hand.
 
-dat/ratings is a directory containing a file of elo values for each rating source listed in sources.json; e.g. [ccrl40.json](https://github.com/op12no2/elox/blob/main/dat/ratings/ccrl40.json). These can be maintained by web scraping. Currently two have been created by hand with a few values.
+dat/ratings is a directory containing a file of elo values for each rating source listed in sources.json; e.g. [ccrl40.json](https://github.com/op12no2/elox/blob/main/dat/ratings/ccrl40.json). These can be maintained by web scraping and can be additive since the values are dated. Currently two have been created by hand with a few values.
 
 Rows are displayed for each unique engine+build combination flatten.js finds accross all the rating value files. Latest values only at present.
 

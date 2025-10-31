@@ -1,0 +1,6571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator_site_dark.min.css" rel="stylesheet">
+    <style>
+      * {font-family: sans-serif;}
+      html, body {height: 100%; margin: 0;}
+      #elox {height: 100vh;
+    </style>
+  </head>
+  <body>
+    <div id="elox"></div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript">
+      var tabledata = [
+  {
+    "family": "Stockfish",
+    "engine": "Stockfish 17.1 4CPU",
+    "eval": "NNUE",
+    "search": "PVS",
+    "lang": "C++",
+    "nat": "",
+    "ccrl4015": 3644,
+    "id": 1
+  },
+  {
+    "family": "PlentyChess",
+    "engine": "PlentyChess 7.0.0 4CPU",
+    "eval": "NNUE",
+    "search": "PVS",
+    "lang": "C++",
+    "nat": "",
+    "ccrl4015": 3643,
+    "id": 2
+  },
+  {
+    "family": "Torch",
+    "engine": "Torch v3 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3634,
+    "id": 3
+  },
+  {
+    "family": "Obsidian",
+    "engine": "Obsidian 16.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3633,
+    "id": 4
+  },
+  {
+    "family": "Reckless",
+    "engine": "Reckless 0.8.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3632,
+    "id": 5
+  },
+  {
+    "family": "Alexandria",
+    "engine": "Alexandria 8.1.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3631,
+    "id": 6
+  },
+  {
+    "family": "Dragon",
+    "engine": "Dragon by Komodo 3.3 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3625,
+    "id": 7
+  },
+  {
+    "family": "Caissa",
+    "engine": "Caissa 1.23 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3621,
+    "id": 8
+  },
+  {
+    "family": "Clover",
+    "engine": "Clover 9.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3620,
+    "id": 9
+  },
+  {
+    "family": "Integral",
+    "engine": "Integral v7 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3618,
+    "id": 10
+  },
+  {
+    "family": "Berserk",
+    "engine": "Berserk 13 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3616,
+    "id": 11
+  },
+  {
+    "family": "Astra",
+    "engine": "Astra 6.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3613,
+    "id": 12
+  },
+  {
+    "family": "Horsie",
+    "engine": "Horsie 1.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3613,
+    "id": 13
+  },
+  {
+    "family": "Stormphrax",
+    "engine": "Stormphrax 7.0.0 4CPU",
+    "eval": "NNUE",
+    "search": "PVS",
+    "lang": "C++",
+    "nat": "ENG",
+    "ccrl4015": 3613,
+    "id": 14
+  },
+  {
+    "family": "Viridithas",
+    "engine": "Viridithas 18.0.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3613,
+    "id": 15
+  },
+  {
+    "family": "Fritz",
+    "engine": "Fritz 20 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3607,
+    "id": 16
+  },
+  {
+    "family": "Halogen",
+    "engine": "Halogen 15 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3605,
+    "id": 17
+  },
+  {
+    "family": "Lizard",
+    "engine": "Lizard 11.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3604,
+    "id": 18
+  },
+  {
+    "family": "Starzix",
+    "engine": "Starzix 6.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3604,
+    "id": 19
+  },
+  {
+    "family": "Uralochka",
+    "engine": "Uralochka 3.42a 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3603,
+    "id": 20
+  },
+  {
+    "family": "RubiChess",
+    "engine": "RubiChess 20240817 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3602,
+    "id": 21
+  },
+  {
+    "family": "Ethereal",
+    "engine": "Ethereal 14.25 4CPU",
+    "eval": "NNUE",
+    "search": "PVS",
+    "lang": "C",
+    "nat": "USA",
+    "ccrl4015": 3599,
+    "id": 22
+  },
+  {
+    "family": "pawnocchio",
+    "engine": "pawnocchio 1.8.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3597,
+    "id": 23
+  },
+  {
+    "family": "Booot",
+    "engine": "Booot 7.4 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3594,
+    "id": 24
+  },
+  {
+    "family": "Quanticade",
+    "engine": "Quanticade Orion 2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3589,
+    "id": 25
+  },
+  {
+    "family": "Titan",
+    "engine": "Titan 1.1.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3588,
+    "id": 26
+  },
+  {
+    "family": "Seer",
+    "engine": "Seer 2.8.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3585,
+    "id": 27
+  },
+  {
+    "family": "Arasan",
+    "engine": "Arasan 25.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3583,
+    "id": 28
+  },
+  {
+    "family": "Ginkgo",
+    "engine": "Ginkgo Santiago 1.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3583,
+    "id": 29
+  },
+  {
+    "family": "Renegade",
+    "engine": "Renegade 1.2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3583,
+    "id": 30
+  },
+  {
+    "family": "Chess System Tal",
+    "engine": "Chess System Tal 2.00 Elo 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3582,
+    "id": 31
+  },
+  {
+    "family": "Igel",
+    "engine": "Igel 3.6.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3579,
+    "id": 32
+  },
+  {
+    "family": "Rebel",
+    "engine": "Rebel 16.3 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3578,
+    "id": 33
+  },
+  {
+    "family": "Revenge",
+    "engine": "Revenge 4.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3576,
+    "id": 34
+  },
+  {
+    "family": "Velvet",
+    "engine": "Velvet 8.1.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3576,
+    "id": 35
+  },
+  {
+    "family": "Motor",
+    "engine": "Motor 0.9.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3572,
+    "id": 36
+  },
+  {
+    "family": "rofChade",
+    "engine": "rofChade 3.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3572,
+    "id": 37
+  },
+  {
+    "family": "Clarity",
+    "engine": "Clarity 7.2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3570,
+    "id": 38
+  },
+  {
+    "family": "Heimdall",
+    "engine": "Heimdall 1.4.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3569,
+    "id": 39
+  },
+  {
+    "family": "Tarnished",
+    "engine": "Tarnished 4.0-Consort 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3569,
+    "id": 40
+  },
+  {
+    "family": "Spaghet",
+    "engine": "Spaghet BologNNese 1.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3564,
+    "id": 41
+  },
+  {
+    "family": "Cinder",
+    "engine": "Cinder 0.2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3560,
+    "id": 42
+  },
+  {
+    "family": "Koivisto",
+    "engine": "Koivisto 9.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3560,
+    "id": 43
+  },
+  {
+    "family": "Peacekeeper",
+    "engine": "Peacekeeper 3.01 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3556,
+    "id": 44
+  },
+  {
+    "family": "Fire",
+    "engine": "Fire 9.3 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3555,
+    "id": 45
+  },
+  {
+    "family": "Deep Sjeng",
+    "engine": "Deep Sjeng 3.6 a16 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3545,
+    "id": 46
+  },
+  {
+    "family": "Slow Chess",
+    "engine": "SlowChess Blitz 2.9 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3544,
+    "id": 47
+  },
+  {
+    "family": "Minic",
+    "engine": "Minic 3.41 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3529,
+    "id": 48
+  },
+  {
+    "family": "Black Marlin",
+    "engine": "Black Marlin 9.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3527,
+    "id": 49
+  },
+  {
+    "family": "Calvin",
+    "engine": "Calvin 6.1.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3526,
+    "id": 50
+  },
+  {
+    "family": "Superultra",
+    "engine": "Superultra 2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3516,
+    "id": 51
+  },
+  {
+    "family": "Altair",
+    "engine": "Altair 7.0.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3506,
+    "id": 52
+  },
+  {
+    "family": "Carp",
+    "engine": "Carp 3.0.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3502,
+    "id": 53
+  },
+  {
+    "family": "Devre",
+    "engine": "Devre 6.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3502,
+    "id": 54
+  },
+  {
+    "family": "Winter",
+    "engine": "Winter 4.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3501,
+    "id": 55
+  },
+  {
+    "family": "Elixir",
+    "engine": "Elixir 3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3498,
+    "id": 56
+  },
+  {
+    "family": "Zangdar",
+    "engine": "Zangdar 5.00.02",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3495,
+    "id": 57
+  },
+  {
+    "family": "Serendipity",
+    "engine": "Serendipity 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3487,
+    "id": 58
+  },
+  {
+    "family": "Texel",
+    "engine": "Texel 1.12",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3485,
+    "id": 59
+  },
+  {
+    "family": "Wasp",
+    "engine": "Wasp 6.50 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3481,
+    "id": 60
+  },
+  {
+    "family": "akimbo",
+    "engine": "akimbo 1.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3475,
+    "id": 61
+  },
+  {
+    "family": "Turbulence",
+    "engine": "Turbulence 0.0.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3473,
+    "id": 62
+  },
+  {
+    "family": "pawn",
+    "engine": "pawn 3.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3472,
+    "id": 63
+  },
+  {
+    "family": "Equisetum",
+    "engine": "Equisetum 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3471,
+    "id": 64
+  },
+  {
+    "family": "Marvin",
+    "engine": "Marvin 6.3.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3468,
+    "id": 65
+  },
+  {
+    "family": "Ynode",
+    "engine": "Ynode 0213",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3462,
+    "id": 66
+  },
+  {
+    "family": "Patricia",
+    "engine": "Patricia 5.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3460,
+    "id": 67
+  },
+  {
+    "family": "Houdini",
+    "engine": "Houdini 6 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3455,
+    "id": 68
+  },
+  {
+    "family": "Nemorino",
+    "engine": "Nemorino 6.00 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3455,
+    "id": 69
+  },
+  {
+    "family": "Sirius",
+    "engine": "Sirius 9.0",
+    "eval": "HCE",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3449,
+    "id": 70
+  },
+  {
+    "family": "Willow",
+    "engine": "Willow 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3446,
+    "id": 71
+  },
+  {
+    "family": "Cheng",
+    "engine": "Cheng 4.48 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3445,
+    "id": 72
+  },
+  {
+    "family": "Leela Chess Zero",
+    "engine": "Lc0 0.28.0 w744204 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3443,
+    "id": 73
+  },
+  {
+    "family": "Smallbrain",
+    "engine": "Smallbrain 7.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3441,
+    "id": 74
+  },
+  {
+    "family": "Midnight",
+    "engine": "Midnight 9 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3439,
+    "id": 75
+  },
+  {
+    "family": "BlackCore",
+    "engine": "BlackCore 6.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3436,
+    "id": 76
+  },
+  {
+    "family": "Tucano",
+    "engine": "Tucano 12.00",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3435,
+    "id": 77
+  },
+  {
+    "family": "Lunar",
+    "engine": "Lunar 0.4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3434,
+    "id": 78
+  },
+  {
+    "family": "Rice",
+    "engine": "Rice 8.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3431,
+    "id": 79
+  },
+  {
+    "family": "chess.cpp",
+    "engine": "chess.cpp 4.10",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3430,
+    "id": 80
+  },
+  {
+    "family": "Yukari",
+    "engine": "Yukari 2025.4.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3426,
+    "id": 81
+  },
+  {
+    "family": "Bagatur",
+    "engine": "Bagatur 5.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3414,
+    "id": 82
+  },
+  {
+    "family": "Celeris",
+    "engine": "Celeris 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3411,
+    "id": 83
+  },
+  {
+    "family": "Iris",
+    "engine": "Iris 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3404,
+    "id": 84
+  },
+  {
+    "family": "Oxide",
+    "engine": "Oxide 2.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3401,
+    "id": 85
+  },
+  {
+    "family": "Hiarcs",
+    "engine": "HIARCS 15.3.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3398,
+    "id": 86
+  },
+  {
+    "family": "Stash",
+    "engine": "Stash 36.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3396,
+    "id": 87
+  },
+  {
+    "family": "Sapling",
+    "engine": "Sapling 1.2.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3391,
+    "id": 88
+  },
+  {
+    "family": "Xiphos",
+    "engine": "Xiphos 0.6 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3386,
+    "id": 89
+  },
+  {
+    "family": "Arcanum",
+    "engine": "Arcanum 2.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3383,
+    "id": 90
+  },
+  {
+    "family": "Lambergar",
+    "engine": "Lambergar 1.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3383,
+    "id": 91
+  },
+  {
+    "family": "Minke",
+    "engine": "Minke 3.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3381,
+    "id": 92
+  },
+  {
+    "family": "Weiss",
+    "engine": "Weiss 2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3381,
+    "id": 93
+  },
+  {
+    "family": "Mantissa",
+    "engine": "Mantissa 3.7.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3380,
+    "id": 94
+  },
+  {
+    "family": "Weiawaga",
+    "engine": "Weiawaga 6.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3376,
+    "id": 95
+  },
+  {
+    "family": "Zahak",
+    "engine": "Zahak 10.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3376,
+    "id": 96
+  },
+  {
+    "family": "Expositor",
+    "engine": "Expositor 2BR17 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3375,
+    "id": 97
+  },
+  {
+    "family": "Counter",
+    "engine": "Counter 5.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3373,
+    "id": 98
+  },
+  {
+    "family": "Leorik",
+    "engine": "Leorik 3.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3371,
+    "id": 99
+  },
+  {
+    "family": "PZChessBot",
+    "engine": "PZChessBot 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3371,
+    "id": 100
+  },
+  {
+    "family": "Saturn",
+    "engine": "Saturn 1.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3371,
+    "id": 101
+  },
+  {
+    "family": "Combusken",
+    "engine": "Combusken 2.0.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3370,
+    "id": 102
+  },
+  {
+    "family": "Illumina",
+    "engine": "Illumina 3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3370,
+    "id": 103
+  },
+  {
+    "family": "Molybdenum",
+    "engine": "Molybdenum 4.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3367,
+    "id": 104
+  },
+  {
+    "family": "Pedantic",
+    "engine": "Pedantic 2.1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3362,
+    "id": 105
+  },
+  {
+    "family": "Perseus",
+    "engine": "Perseus 1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3359,
+    "id": 106
+  },
+  {
+    "family": "Schneckbert",
+    "engine": "Schneckbert 3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3357,
+    "id": 107
+  },
+  {
+    "family": "Avalanche",
+    "engine": "Avalanche 2.1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3352,
+    "id": 108
+  },
+  {
+    "family": "StockDory",
+    "engine": "StockDory Starfish 0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3352,
+    "id": 109
+  },
+  {
+    "family": "Laser",
+    "engine": "Laser 1.7 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3338,
+    "id": 110
+  },
+  {
+    "family": "Frozenight",
+    "engine": "Frozenight 6.0.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3337,
+    "id": 111
+  },
+  {
+    "family": "Lynx",
+    "engine": "Lynx 1.11.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3334,
+    "id": 112
+  },
+  {
+    "family": "Defenchess",
+    "engine": "Defenchess 2.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3331,
+    "id": 113
+  },
+  {
+    "family": "Deep Shredder",
+    "engine": "Deep Shredder 13 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3328,
+    "id": 114
+  },
+  {
+    "family": "Schoenemann",
+    "engine": "Schoenemann 0.4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3327,
+    "id": 115
+  },
+  {
+    "family": "Drofa",
+    "engine": "Drofa 4.0.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3318,
+    "id": 116
+  },
+  {
+    "family": "Fizbo",
+    "engine": "Fizbo 2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3318,
+    "id": 117
+  },
+  {
+    "family": "Mr Bob",
+    "engine": "Mr Bob 1.3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3315,
+    "id": 118
+  },
+  {
+    "family": "Andscacs",
+    "engine": "Andscacs 0.95 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3311,
+    "id": 119
+  },
+  {
+    "family": "Eleanor",
+    "engine": "Eleanor 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3310,
+    "id": 120
+  },
+  {
+    "family": "Schooner",
+    "engine": "Schooner 2.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3310,
+    "id": 121
+  },
+  {
+    "family": "Nalwald",
+    "engine": "Nalwald 19",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3307,
+    "id": 122
+  },
+  {
+    "family": "Chiron",
+    "engine": "Chiron 5 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3306,
+    "id": 123
+  },
+  {
+    "family": "RukChess",
+    "engine": "RukChess 3.0.15 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3304,
+    "id": 124
+  },
+  {
+    "family": "Quirky",
+    "engine": "Quirky 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3303,
+    "id": 125
+  },
+  {
+    "family": "Publius",
+    "engine": "Publius 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3294,
+    "id": 126
+  },
+  {
+    "family": "bitbit",
+    "engine": "bitbit 1.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3294,
+    "id": 127
+  },
+  {
+    "family": "Little Goliath",
+    "engine": "Little Goliath Evolution 3.16",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3291,
+    "id": 128
+  },
+  {
+    "family": "Protej",
+    "engine": "Protej 0.6.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3291,
+    "id": 129
+  },
+  {
+    "family": "Cadie",
+    "engine": "Cadie 2.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3267,
+    "id": 130
+  },
+  {
+    "family": "NirvanaChess",
+    "engine": "NirvanaChess 2.5 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3267,
+    "id": 131
+  },
+  {
+    "family": "Kuma",
+    "engine": "Kuma 1.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3266,
+    "id": 132
+  },
+  {
+    "family": "Odonata",
+    "engine": "Odonata 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3266,
+    "id": 133
+  },
+  {
+    "family": "Orion",
+    "engine": "Orion 0.9 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3262,
+    "id": 134
+  },
+  {
+    "family": "DanaSah",
+    "engine": "DanaSah 9.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3254,
+    "id": 135
+  },
+  {
+    "family": "StockNemo",
+    "engine": "StockNemo 5.7.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3244,
+    "id": 136
+  },
+  {
+    "family": "Svart",
+    "engine": "Svart 6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3241,
+    "id": 137
+  },
+  {
+    "family": "Tornado",
+    "engine": "Tornado 9.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3240,
+    "id": 138
+  },
+  {
+    "family": "Vajolet",
+    "engine": "Vajolet2 2.7 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3238,
+    "id": 139
+  },
+  {
+    "family": "Cwtch",
+    "engine": "Cwtch 3",
+    "eval": "NNUE",
+    "search": "PVS",
+    "lang": "C",
+    "nat": "WAL",
+    "ccrl4015": 3237,
+    "id": 140
+  },
+  {
+    "family": "Panda",
+    "engine": "Panda 1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3226,
+    "id": 141
+  },
+  {
+    "family": "ChessBrainVB",
+    "engine": "ChessBrainVB 3.74 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3224,
+    "id": 142
+  },
+  {
+    "family": "Gull",
+    "engine": "Gull 3 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3224,
+    "id": 143
+  },
+  {
+    "family": "Princhess",
+    "engine": "Princhess 0.19.0",
+    "eval": "",
+    "search": "MCTS",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3223,
+    "id": 144
+  },
+  {
+    "family": "EveAnn",
+    "engine": "EveAnn 3.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3221,
+    "id": 145
+  },
+  {
+    "family": "Equinox",
+    "engine": "Equinox 3.20 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3216,
+    "id": 146
+  },
+  {
+    "family": "Isa",
+    "engine": "Isa 4.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3212,
+    "id": 147
+  },
+  {
+    "family": "Dark Toga",
+    "engine": "Dark Toga 1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3211,
+    "id": 148
+  },
+  {
+    "family": "Invictus",
+    "engine": "Invictus r382 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3207,
+    "id": 149
+  },
+  {
+    "family": "WhiteCore",
+    "engine": "WhiteCore 0.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3205,
+    "id": 150
+  },
+  {
+    "family": "Seredina",
+    "engine": "Seredina 1.2c",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3204,
+    "id": 151
+  },
+  {
+    "family": "Critter",
+    "engine": "Critter 1.6a 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3200,
+    "id": 152
+  },
+  {
+    "family": "Sturddle",
+    "engine": "Sturddle 2.3.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3198,
+    "id": 153
+  },
+  {
+    "family": "Hannibal",
+    "engine": "Hannibal 1.7 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3196,
+    "id": 154
+  },
+  {
+    "family": "Simbelmyne",
+    "engine": "Simbelmyne 1.10.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3193,
+    "id": 155
+  },
+  {
+    "family": "Bouquet",
+    "engine": "Bouquet 1.8 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3189,
+    "id": 156
+  },
+  {
+    "family": "Pingu",
+    "engine": "Pingu 5.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3186,
+    "id": 157
+  },
+  {
+    "family": "Rybka",
+    "engine": "Rybka 4 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3186,
+    "id": 158
+  },
+  {
+    "family": "Alfil",
+    "engine": "Alfil 15.7 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3182,
+    "id": 159
+  },
+  {
+    "family": "ChandraChess",
+    "engine": "ChandraChess 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3181,
+    "id": 160
+  },
+  {
+    "family": "Protector",
+    "engine": "Protector 1.9.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3180,
+    "id": 161
+  },
+  {
+    "family": "Jet",
+    "engine": "Jet 1.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3176,
+    "id": 162
+  },
+  {
+    "family": "Dog",
+    "engine": "Dog 4.10",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3174,
+    "id": 163
+  },
+  {
+    "family": "Anubis",
+    "engine": "Anubis 3.02",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3170,
+    "id": 164
+  },
+  {
+    "family": "BlackMamba",
+    "engine": "BlackMamba 2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3161,
+    "id": 165
+  },
+  {
+    "family": "iCE",
+    "engine": "iCE 4.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3159,
+    "id": 166
+  },
+  {
+    "family": "Amoeba",
+    "engine": "Amoeba 3.4 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3155,
+    "id": 167
+  },
+  {
+    "family": "Senpai",
+    "engine": "Senpai 2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3155,
+    "id": 168
+  },
+  {
+    "family": "Prelude",
+    "engine": "Prelude Fusion 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3154,
+    "id": 169
+  },
+  {
+    "family": "Demolito",
+    "engine": "Demolito 2021-10-04",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3153,
+    "id": 170
+  },
+  {
+    "family": "Kobra",
+    "engine": "Kobra 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3151,
+    "id": 171
+  },
+  {
+    "family": "ice4",
+    "engine": "ice4 6.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3149,
+    "id": 172
+  },
+  {
+    "family": "Mida",
+    "engine": "MIDA 2.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3148,
+    "id": 173
+  },
+  {
+    "family": "FabChess",
+    "engine": "FabChess 1.16 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3141,
+    "id": 174
+  },
+  {
+    "family": "Strelka",
+    "engine": "Strelka 5.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3141,
+    "id": 175
+  },
+  {
+    "family": "Topple",
+    "engine": "Topple 0.8.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3137,
+    "id": 176
+  },
+  {
+    "family": "Naum",
+    "engine": "Naum 4.6 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3129,
+    "id": 177
+  },
+  {
+    "family": "Priessnitz",
+    "engine": "Priessnitz 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3129,
+    "id": 178
+  },
+  {
+    "family": "Beef",
+    "engine": "Beef 0.3.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3123,
+    "id": 179
+  },
+  {
+    "family": "Atlas",
+    "engine": "Atlas 4.35",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3118,
+    "id": 180
+  },
+  {
+    "family": "chess22k",
+    "engine": "chess22k 1.14",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3116,
+    "id": 181
+  },
+  {
+    "family": "Monolith",
+    "engine": "Monolith 2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3115,
+    "id": 182
+  },
+  {
+    "family": "Lozza",
+    "engine": "Lozza 7.0",
+    "eval": "NNUE",
+    "search": "PVS",
+    "lang": "JS",
+    "nat": "WAL",
+    "ccrl4015": 3110,
+    "id": 183
+  },
+  {
+    "family": "Rodent",
+    "engine": "Rodent III 0.276 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3108,
+    "id": 184
+  },
+  {
+    "family": "Admete",
+    "engine": "Admete 1.8.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3100,
+    "id": 185
+  },
+  {
+    "family": "Bit-Genie",
+    "engine": "Bit-Genie 9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3099,
+    "id": 186
+  },
+  {
+    "family": "Myrddin",
+    "engine": "Myrddin 0.93",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3099,
+    "id": 187
+  },
+  {
+    "family": "Potential",
+    "engine": "Potential 3.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3086,
+    "id": 188
+  },
+  {
+    "family": "Jackal",
+    "engine": "Jackal 1.2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3084,
+    "id": 189
+  },
+  {
+    "family": "GOOB",
+    "engine": "GOOB 1.8.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3068,
+    "id": 190
+  },
+  {
+    "family": "Pirarucu",
+    "engine": "Pirarucu 2.7.4 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3063,
+    "id": 191
+  },
+  {
+    "family": "Weak",
+    "engine": "Weak 1.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3063,
+    "id": 192
+  },
+  {
+    "family": "Wahoo",
+    "engine": "Wahoo 4.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3059,
+    "id": 193
+  },
+  {
+    "family": "SmarThink",
+    "engine": "SmarThink 1.98",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3058,
+    "id": 194
+  },
+  {
+    "family": "Deep Junior",
+    "engine": "Deep Junior 13 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3054,
+    "id": 195
+  },
+  {
+    "family": "Bobcat",
+    "engine": "Bobcat 8.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3053,
+    "id": 196
+  },
+  {
+    "family": "Inanis",
+    "engine": "Inanis 1.6.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3047,
+    "id": 197
+  },
+  {
+    "family": "Gogobello",
+    "engine": "Gogobello 2.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3042,
+    "id": 198
+  },
+  {
+    "family": "Crafty",
+    "engine": "Crafty 25.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3041,
+    "id": 199
+  },
+  {
+    "family": "Spike",
+    "engine": "Spike 1.4 Leiden 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3041,
+    "id": 200
+  },
+  {
+    "family": "4ku",
+    "engine": "4ku 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3029,
+    "id": 201
+  },
+  {
+    "family": "Hakkapeliitta",
+    "engine": "Hakkapeliitta TCEC v2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3029,
+    "id": 202
+  },
+  {
+    "family": "Cheers",
+    "engine": "Cheers 1.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3026,
+    "id": 203
+  },
+  {
+    "family": "Polaris",
+    "engine": "Polaris 1.8.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3023,
+    "id": 204
+  },
+  {
+    "family": "Dirty",
+    "engine": "Dirty Catpaw",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3022,
+    "id": 205
+  },
+  {
+    "family": "Nu-chess",
+    "engine": "Nu-chess 1.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3017,
+    "id": 206
+  },
+  {
+    "family": "Yakka",
+    "engine": "Yakka 1.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3012,
+    "id": 207
+  },
+  {
+    "family": "Deuterium",
+    "engine": "Deuterium 2019.2.37.73",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3010,
+    "id": 208
+  },
+  {
+    "family": "Scorpio",
+    "engine": "Scorpio 2.8 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3007,
+    "id": 209
+  },
+  {
+    "family": "Asymptote",
+    "engine": "Asymptote 0.8 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3005,
+    "id": 210
+  },
+  {
+    "family": "Truncator",
+    "engine": "Truncator 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3004,
+    "id": 211
+  },
+  {
+    "family": "Godel",
+    "engine": "Godel 7.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3002,
+    "id": 212
+  },
+  {
+    "family": "Meltdown",
+    "engine": "Meltdown 1.10",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 3001,
+    "id": 213
+  },
+  {
+    "family": "Ares",
+    "engine": "Ares 5.45",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2999,
+    "id": 214
+  },
+  {
+    "family": "EXchess",
+    "engine": "EXchess 7.97b 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2995,
+    "id": 215
+  },
+  {
+    "family": "Puffin",
+    "engine": "Puffin 5.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2994,
+    "id": 216
+  },
+  {
+    "family": "Zappa",
+    "engine": "Zappa Mexico II 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2992,
+    "id": 217
+  },
+  {
+    "family": "Spark",
+    "engine": "Spark 1.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2991,
+    "id": 218
+  },
+  {
+    "family": "Bread",
+    "engine": "Bread 1.6.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2988,
+    "id": 219
+  },
+  {
+    "family": "Ceibo",
+    "engine": "Ceibo 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2985,
+    "id": 220
+  },
+  {
+    "family": "Francesca",
+    "engine": "Francesca MAD 0.32",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2984,
+    "id": 221
+  },
+  {
+    "family": "Vengeance",
+    "engine": "Vengeance 3.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2984,
+    "id": 222
+  },
+  {
+    "family": "Eidolon",
+    "engine": "Eidolon 1.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2974,
+    "id": 223
+  },
+  {
+    "family": "Chessatron",
+    "engine": "Chessatron 1.3.14159",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2966,
+    "id": 224
+  },
+  {
+    "family": "Rengar",
+    "engine": "Rengar 2.1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2964,
+    "id": 225
+  },
+  {
+    "family": "The Baron",
+    "engine": "The Baron 3.44 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2964,
+    "id": 226
+  },
+  {
+    "family": "Gaviota",
+    "engine": "Gaviota 1.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2961,
+    "id": 227
+  },
+  {
+    "family": "Sentinel",
+    "engine": "Sentinel 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2959,
+    "id": 228
+  },
+  {
+    "family": "Cheese",
+    "engine": "Cheese 3.2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2952,
+    "id": 229
+  },
+  {
+    "family": "Onno",
+    "engine": "Onno 1.2.70 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2951,
+    "id": 230
+  },
+  {
+    "family": "monty",
+    "engine": "monty 1.0.0",
+    "eval": "",
+    "search": "MCTS",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2944,
+    "id": 231
+  },
+  {
+    "family": "Thinker",
+    "engine": "Thinker 5.4c Inert 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2942,
+    "id": 232
+  },
+  {
+    "family": "tomitankChess",
+    "engine": "tomitankChess 5.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2941,
+    "id": 233
+  },
+  {
+    "family": "DisasterArea",
+    "engine": "DisasterArea 1.65 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2931,
+    "id": 234
+  },
+  {
+    "family": "KnightX",
+    "engine": "KnightX 4.6b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2927,
+    "id": 235
+  },
+  {
+    "family": "Quazar",
+    "engine": "Quazar 0.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2923,
+    "id": 236
+  },
+  {
+    "family": "DiscoCheck",
+    "engine": "DiscoCheck 5.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2917,
+    "id": 237
+  },
+  {
+    "family": "Tcheran",
+    "engine": "Tcheran 6.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2917,
+    "id": 238
+  },
+  {
+    "family": "Bright",
+    "engine": "Bright 0.4a 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2911,
+    "id": 239
+  },
+  {
+    "family": "Glaurung",
+    "engine": "Glaurung 2.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2911,
+    "id": 240
+  },
+  {
+    "family": "SeaWall",
+    "engine": "Seawall 20250322",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2908,
+    "id": 241
+  },
+  {
+    "family": "Octochess",
+    "engine": "Octochess r5506 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2903,
+    "id": 242
+  },
+  {
+    "family": "MinkoChess",
+    "engine": "MinkoChess 1.3 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2898,
+    "id": 243
+  },
+  {
+    "family": "Pluto",
+    "engine": "Pluto 1.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2895,
+    "id": 244
+  },
+  {
+    "family": "Shallow Guess",
+    "engine": "Shallow Guess 0.4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2895,
+    "id": 245
+  },
+  {
+    "family": "OliThink",
+    "engine": "OliThink 5.11.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2890,
+    "id": 246
+  },
+  {
+    "family": "Qapla",
+    "engine": "Qapla 0.3.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2889,
+    "id": 247
+  },
+  {
+    "family": "Pounce",
+    "engine": "Pounce 2.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2870,
+    "id": 248
+  },
+  {
+    "family": "STRO4K",
+    "engine": "STRO4K 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2866,
+    "id": 249
+  },
+  {
+    "family": "Clovis",
+    "engine": "Clovis III",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2864,
+    "id": 250
+  },
+  {
+    "family": "Loop",
+    "engine": "Loop M1-T 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2860,
+    "id": 251
+  },
+  {
+    "family": "Nemo",
+    "engine": "Nemo 1.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2860,
+    "id": 252
+  },
+  {
+    "family": "Colossus",
+    "engine": "Colossus 2025b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2858,
+    "id": 253
+  },
+  {
+    "family": "Dumb",
+    "engine": "Dumb 2.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2856,
+    "id": 254
+  },
+  {
+    "family": "Euwe",
+    "engine": "Euwe 2.1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2856,
+    "id": 255
+  },
+  {
+    "family": "Shield",
+    "engine": "Shield 2.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2850,
+    "id": 256
+  },
+  {
+    "family": "BugChess",
+    "engine": "BugChess2 1.9 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2846,
+    "id": 257
+  },
+  {
+    "family": "Jacky Chess",
+    "engine": "Jacky Chess 25.04",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2845,
+    "id": 258
+  },
+  {
+    "family": "Zurichess",
+    "engine": "Zurichess Neuchatel",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2836,
+    "id": 259
+  },
+  {
+    "family": "Murka",
+    "engine": "Murka 3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2833,
+    "id": 260
+  },
+  {
+    "family": "Hardfiskur",
+    "engine": "Hardfiskur rev-cdeec8a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2827,
+    "id": 261
+  },
+  {
+    "family": "Shallow",
+    "engine": "Shallow 5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2827,
+    "id": 262
+  },
+  {
+    "family": "MadChess",
+    "engine": "MadChess 3.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2826,
+    "id": 263
+  },
+  {
+    "family": "GNU Chess",
+    "engine": "GNU Chess 5.60",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2824,
+    "id": 264
+  },
+  {
+    "family": "Jonny",
+    "engine": "Jonny 4.00 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2822,
+    "id": 265
+  },
+  {
+    "family": "Belette",
+    "engine": "Belette 3.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2806,
+    "id": 266
+  },
+  {
+    "family": "GnuCheese",
+    "engine": "GnuCheese 1.00",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2805,
+    "id": 267
+  },
+  {
+    "family": "RuyDos",
+    "engine": "RuyDos 1.1.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2804,
+    "id": 268
+  },
+  {
+    "family": "Zevra",
+    "engine": "Zevra 2.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2804,
+    "id": 269
+  },
+  {
+    "family": "Rhetoric",
+    "engine": "Rhetoric 1.4.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2803,
+    "id": 270
+  },
+  {
+    "family": "Coiled",
+    "engine": "Coiled 1.1 (no NNUE)",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2796,
+    "id": 271
+  },
+  {
+    "family": "Chess-3",
+    "engine": "Chess-3 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2790,
+    "id": 272
+  },
+  {
+    "family": "GreKo",
+    "engine": "GreKo 2021.08",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2788,
+    "id": 273
+  },
+  {
+    "family": "Pawny",
+    "engine": "Pawny 1.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2787,
+    "id": 274
+  },
+  {
+    "family": "Naraku",
+    "engine": "Naraku 1.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2779,
+    "id": 275
+  },
+  {
+    "family": "Frenzee",
+    "engine": "Frenzee 3.5.19",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2777,
+    "id": 276
+  },
+  {
+    "family": "Twisted Logic",
+    "engine": "Twisted Logic 20100131x",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2777,
+    "id": 277
+  },
+  {
+    "family": "Mess",
+    "engine": "Mess 0.3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2772,
+    "id": 278
+  },
+  {
+    "family": "Apotheosis",
+    "engine": "Apotheosis 4.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2770,
+    "id": 279
+  },
+  {
+    "family": "Javelin",
+    "engine": "Javelin 3.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2761,
+    "id": 280
+  },
+  {
+    "family": "Devel",
+    "engine": "Devel 3.8.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2760,
+    "id": 281
+  },
+  {
+    "family": "Bison",
+    "engine": "Bison 9.11",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2759,
+    "id": 282
+  },
+  {
+    "family": "Ktulu",
+    "engine": "Ktulu 9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2758,
+    "id": 283
+  },
+  {
+    "family": "Trinket",
+    "engine": "Trinket 3.5.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2758,
+    "id": 284
+  },
+  {
+    "family": "Lux",
+    "engine": "Lux 4.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2757,
+    "id": 285
+  },
+  {
+    "family": "Nawito",
+    "engine": "Nawito 22.07",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2756,
+    "id": 286
+  },
+  {
+    "family": "Fridolin",
+    "engine": "Fridolin 4.00",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2753,
+    "id": 287
+  },
+  {
+    "family": "Aramis",
+    "engine": "Aramis 1.4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2749,
+    "id": 288
+  },
+  {
+    "family": "Chronos",
+    "engine": "Chronos 1.9.9 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2741,
+    "id": 289
+  },
+  {
+    "family": "Arminius",
+    "engine": "Arminius 2018-12-23",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2740,
+    "id": 290
+  },
+  {
+    "family": "Aurora",
+    "engine": "Aurora 1.26.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2740,
+    "id": 291
+  },
+  {
+    "family": "Carballo",
+    "engine": "Carballo 1.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2739,
+    "id": 292
+  },
+  {
+    "family": "CT800",
+    "engine": "CT800 1.45",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2734,
+    "id": 293
+  },
+  {
+    "family": "Nebula",
+    "engine": "Nebula 2.0 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2727,
+    "id": 294
+  },
+  {
+    "family": "K2",
+    "engine": "K2 0.99",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2714,
+    "id": 295
+  },
+  {
+    "family": "Boychesser",
+    "engine": "Boychesser 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2711,
+    "id": 296
+  },
+  {
+    "family": "Delocto",
+    "engine": "Delocto 200419",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2710,
+    "id": 297
+  },
+  {
+    "family": "Caligula",
+    "engine": "Caligula 1.0b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2707,
+    "id": 298
+  },
+  {
+    "family": "Chessmaster",
+    "engine": "Chessmaster 11 Archangel",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2705,
+    "id": 299
+  },
+  {
+    "family": "Chess Tiger",
+    "engine": "Chess Tiger 2007.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2703,
+    "id": 300
+  },
+  {
+    "family": "Delfi",
+    "engine": "Delfi 5.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2694,
+    "id": 301
+  },
+  {
+    "family": "Blunder",
+    "engine": "Blunder 8.5.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2693,
+    "id": 302
+  },
+  {
+    "family": "ECE",
+    "engine": "ECE 20.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2693,
+    "id": 303
+  },
+  {
+    "family": "Hamsters",
+    "engine": "Hamsters 0.7.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2682,
+    "id": 304
+  },
+  {
+    "family": "Daydreamer",
+    "engine": "Daydreamer 1.75",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2680,
+    "id": 305
+  },
+  {
+    "family": "WyldChess",
+    "engine": "WyldChess 1.51",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2679,
+    "id": 306
+  },
+  {
+    "family": "Supernova",
+    "engine": "Supernova 2.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2678,
+    "id": 307
+  },
+  {
+    "family": "RedQueen",
+    "engine": "RedQueen 1.1.98 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2674,
+    "id": 308
+  },
+  {
+    "family": "Pharaon",
+    "engine": "Pharaon 3.5.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2672,
+    "id": 309
+  },
+  {
+    "family": "Lishex",
+    "engine": "Lishex 1.1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2667,
+    "id": 310
+  },
+  {
+    "family": "Djinn",
+    "engine": "Djinn 1.021",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2662,
+    "id": 311
+  },
+  {
+    "family": "Drosophila",
+    "engine": "Drosophila 1.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2660,
+    "id": 312
+  },
+  {
+    "family": "Movei",
+    "engine": "Movei 00.8.438 (10 10 10)",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2660,
+    "id": 313
+  },
+  {
+    "family": "Jellyfish",
+    "engine": "Jellyfish 1.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2656,
+    "id": 314
+  },
+  {
+    "family": "Alaric",
+    "engine": "Alaric 707",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2655,
+    "id": 315
+  },
+  {
+    "family": "Floyd",
+    "engine": "Floyd 0.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2652,
+    "id": 316
+  },
+  {
+    "family": "Keele",
+    "engine": "Keele 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2648,
+    "id": 317
+  },
+  {
+    "family": "Ghost",
+    "engine": "Ghost 3.1 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2646,
+    "id": 318
+  },
+  {
+    "family": "Philou",
+    "engine": "Philou 3.7.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2644,
+    "id": 319
+  },
+  {
+    "family": "E.T. Chess",
+    "engine": "E.T. Chess 13.01.08",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2643,
+    "id": 320
+  },
+  {
+    "family": "Rotor",
+    "engine": "Rotor 0.7a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2641,
+    "id": 321
+  },
+  {
+    "family": "Cyrano",
+    "engine": "Cyrano 0.6b17 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2639,
+    "id": 322
+  },
+  {
+    "family": "Gandalf",
+    "engine": "Gandalf 7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2638,
+    "id": 323
+  },
+  {
+    "family": "RookieMonster",
+    "engine": "RookieMonster 1.9.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2632,
+    "id": 324
+  },
+  {
+    "family": "Rodin",
+    "engine": "Rodin 8.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2628,
+    "id": 325
+  },
+  {
+    "family": "Fatalii",
+    "engine": "Fatalii 0.9.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2627,
+    "id": 326
+  },
+  {
+    "family": "Sjakk",
+    "engine": "Sjakk 2.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2626,
+    "id": 327
+  },
+  {
+    "family": "Wildcat",
+    "engine": "WildCat 8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2623,
+    "id": 328
+  },
+  {
+    "family": "Eubos",
+    "engine": "Eubos 4.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2620,
+    "id": 329
+  },
+  {
+    "family": "Betsabe",
+    "engine": "Betsabe II 2023",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2615,
+    "id": 330
+  },
+  {
+    "family": "NoraGrace",
+    "engine": "NoraGrace 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2615,
+    "id": 331
+  },
+  {
+    "family": "smol.cs",
+    "engine": "smol.cs 1.61",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2614,
+    "id": 332
+  },
+  {
+    "family": "Ruffian",
+    "engine": "Ruffian 2.1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2612,
+    "id": 333
+  },
+  {
+    "family": "Phalanx",
+    "engine": "Phalanx XXV",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2610,
+    "id": 334
+  },
+  {
+    "family": "Sloppy",
+    "engine": "Sloppy 0.2.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2607,
+    "id": 335
+  },
+  {
+    "family": "Toad",
+    "engine": "Toad 3.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2606,
+    "id": 336
+  },
+  {
+    "family": "Petrel",
+    "engine": "Petrel 2.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2602,
+    "id": 337
+  },
+  {
+    "family": "Blocky",
+    "engine": "Blocky 2.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2598,
+    "id": 338
+  },
+  {
+    "family": "Donna",
+    "engine": "Donna 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2594,
+    "id": 339
+  },
+  {
+    "family": "Galjoen",
+    "engine": "Galjoen 0.40",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2594,
+    "id": 340
+  },
+  {
+    "family": "Raven",
+    "engine": "Raven 1.30",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2591,
+    "id": 341
+  },
+  {
+    "family": "Glass",
+    "engine": "Glass 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2586,
+    "id": 342
+  },
+  {
+    "family": "Aristarch",
+    "engine": "Aristarch 4.50",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2585,
+    "id": 343
+  },
+  {
+    "family": "Muse",
+    "engine": "Muse 0.953",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2584,
+    "id": 344
+  },
+  {
+    "family": "N2",
+    "engine": "N2 0.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2581,
+    "id": 345
+  },
+  {
+    "family": "Pseudo",
+    "engine": "Pseudo 0.7c",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2581,
+    "id": 346
+  },
+  {
+    "family": "Petir",
+    "engine": "Petir 4.39",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2580,
+    "id": 347
+  },
+  {
+    "family": "Brutus",
+    "engine": "Brutus 8.05",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2579,
+    "id": 348
+  },
+  {
+    "family": "Amyan",
+    "engine": "Amyan 1.72",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2577,
+    "id": 349
+  },
+  {
+    "family": "CuckooChess",
+    "engine": "CuckooChess 1.12 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2577,
+    "id": 350
+  },
+  {
+    "family": "GarboChess",
+    "engine": "GarboChess 3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2573,
+    "id": 351
+  },
+  {
+    "family": "Dimitri",
+    "engine": "Dimitri 4.99",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2571,
+    "id": 352
+  },
+  {
+    "family": "Hedgehog",
+    "engine": "Hedgehog 2.407",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2566,
+    "id": 353
+  },
+  {
+    "family": "Razer",
+    "engine": "Razer 0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2559,
+    "id": 354
+  },
+  {
+    "family": "Tantabus",
+    "engine": "Tantabus 2.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2559,
+    "id": 355
+  },
+  {
+    "family": "Capivara",
+    "engine": "Capivara LK 0.09b02f",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2555,
+    "id": 356
+  },
+  {
+    "family": "Luna",
+    "engine": "Luna 2.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2554,
+    "id": 357
+  },
+  {
+    "family": "Jumbo",
+    "engine": "Jumbo 0.7.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2553,
+    "id": 358
+  },
+  {
+    "family": "SOS",
+    "engine": "SOS 5.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2551,
+    "id": 359
+  },
+  {
+    "family": "paulchen",
+    "engine": "paulchen332 0.1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2550,
+    "id": 360
+  },
+  {
+    "family": "Eggnog",
+    "engine": "Eggnog-Dev (6-15-2025)",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2546,
+    "id": 361
+  },
+  {
+    "family": "Detroid",
+    "engine": "Detroid 1.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2545,
+    "id": 362
+  },
+  {
+    "family": "JikChess",
+    "engine": "JikChess 0.02",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2545,
+    "id": 363
+  },
+  {
+    "family": "Dorky",
+    "engine": "Dorky 4.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2544,
+    "id": 364
+  },
+  {
+    "family": "Delphil",
+    "engine": "Delphil 3.2 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2538,
+    "id": 365
+  },
+  {
+    "family": "Jazz",
+    "engine": "Jazz 840 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2537,
+    "id": 366
+  },
+  {
+    "family": "Prophet",
+    "engine": "Prophet 5.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2535,
+    "id": 367
+  },
+  {
+    "family": "Anaconda",
+    "engine": "Anaconda 2.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2533,
+    "id": 368
+  },
+  {
+    "family": "FrankWalter",
+    "engine": "FrankWalter 2.4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2529,
+    "id": 369
+  },
+  {
+    "family": "NanoSzachy",
+    "engine": "nanoSzachy 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2527,
+    "id": 370
+  },
+  {
+    "family": "AnMon",
+    "engine": "AnMon 5.75",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2524,
+    "id": 371
+  },
+  {
+    "family": "Ufim",
+    "engine": "Ufim 8.02",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2524,
+    "id": 372
+  },
+  {
+    "family": "Maverick",
+    "engine": "Maverick 1.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2523,
+    "id": 373
+  },
+  {
+    "family": "Axolotl",
+    "engine": "Axolotl 1.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2518,
+    "id": 374
+  },
+  {
+    "family": "Nemeton",
+    "engine": "Nemeton 1.8 4CPU",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2512,
+    "id": 375
+  },
+  {
+    "family": "Hermann",
+    "engine": "Hermann 2.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2510,
+    "id": 376
+  },
+  {
+    "family": "CyberPagno",
+    "engine": "CyberPagno 3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2503,
+    "id": 377
+  },
+  {
+    "family": "ChessGM",
+    "engine": "ChessGM 0.7.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2497,
+    "id": 378
+  },
+  {
+    "family": "FoxSEE",
+    "engine": "FoxSEE 8.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2496,
+    "id": 379
+  },
+  {
+    "family": "Nimzo",
+    "engine": "Nimzo 8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2491,
+    "id": 380
+  },
+  {
+    "family": "Tao",
+    "engine": "Tao 5.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2481,
+    "id": 381
+  },
+  {
+    "family": "LittleThought",
+    "engine": "LittleThought 1.052",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2479,
+    "id": 382
+  },
+  {
+    "family": "Pupsi",
+    "engine": "Pupsi2 0.09",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2476,
+    "id": 383
+  },
+  {
+    "family": "Loki",
+    "engine": "Loki 3.5.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2473,
+    "id": 384
+  },
+  {
+    "family": "Pepito",
+    "engine": "Pepito 1.59.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2473,
+    "id": 385
+  },
+  {
+    "family": "Frolic",
+    "engine": "Frolic 1.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2471,
+    "id": 386
+  },
+  {
+    "family": "Green Light Chess",
+    "engine": "Green Light Chess 3.01.2.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2468,
+    "id": 387
+  },
+  {
+    "family": "Fornax",
+    "engine": "Fornax 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2467,
+    "id": 388
+  },
+  {
+    "family": "BBChess",
+    "engine": "BBChess 1.3b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2465,
+    "id": 389
+  },
+  {
+    "family": "Trace",
+    "engine": "Trace 1.36",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2464,
+    "id": 390
+  },
+  {
+    "family": "Cerebro",
+    "engine": "Cerebro 3.03d",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2461,
+    "id": 391
+  },
+  {
+    "family": "Xpdnt",
+    "engine": "Xpdnt 091007",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2461,
+    "id": 392
+  },
+  {
+    "family": "Yace",
+    "engine": "Yace 0.99.87",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2458,
+    "id": 393
+  },
+  {
+    "family": "Bruja",
+    "engine": "Bruja 1.9.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2456,
+    "id": 394
+  },
+  {
+    "family": "pikoSzachy",
+    "engine": "pikoSzachy 4.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2456,
+    "id": 395
+  },
+  {
+    "family": "Matacz",
+    "engine": "Matacz 1.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2455,
+    "id": 396
+  },
+  {
+    "family": "SpiderChess",
+    "engine": "SpiderChess 070603",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2455,
+    "id": 397
+  },
+  {
+    "family": "Anatoli",
+    "engine": "Anatoli 0.35k",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2449,
+    "id": 398
+  },
+  {
+    "family": "Waxman",
+    "engine": "Waxman 2022",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2448,
+    "id": 399
+  },
+  {
+    "family": "Kimbo",
+    "engine": "Kimbo 1.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2447,
+    "id": 400
+  },
+  {
+    "family": "Quark",
+    "engine": "Quark 2.35",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2442,
+    "id": 401
+  },
+  {
+    "family": "Anka",
+    "engine": "Anka 0.6.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2441,
+    "id": 402
+  },
+  {
+    "family": "Shen Yu",
+    "engine": "Shen Yu 2.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2441,
+    "id": 403
+  },
+  {
+    "family": "Bumblebee",
+    "engine": "Bumblebee 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2440,
+    "id": 404
+  },
+  {
+    "family": "Giraffe",
+    "engine": "Giraffe 20150908",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2437,
+    "id": 405
+  },
+  {
+    "family": "Queen",
+    "engine": "Queen 4.05",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2430,
+    "id": 406
+  },
+  {
+    "family": "SoFCheck",
+    "engine": "SoFCheck 0.9 beta",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2426,
+    "id": 407
+  },
+  {
+    "family": "Hussar",
+    "engine": "Hussar 0.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2419,
+    "id": 408
+  },
+  {
+    "family": "Barbarossa",
+    "engine": "Barbarossa 0.7.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2418,
+    "id": 409
+  },
+  {
+    "family": "Bearded",
+    "engine": "Bearded N44.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2417,
+    "id": 410
+  },
+  {
+    "family": "MinimalChess",
+    "engine": "MinimalChess 0.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2417,
+    "id": 411
+  },
+  {
+    "family": "Tunguska",
+    "engine": "Tunguska 1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2417,
+    "id": 412
+  },
+  {
+    "family": "Abrok",
+    "engine": "Abrok 5.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2416,
+    "id": 413
+  },
+  {
+    "family": "King of Kings",
+    "engine": "King of Kings 2.56",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2416,
+    "id": 414
+  },
+  {
+    "family": "Mephisto",
+    "engine": "Mephisto Gideon Professional",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2416,
+    "id": 415
+  },
+  {
+    "family": "Typhoon",
+    "engine": "Typhoon 1.00-348",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2416,
+    "id": 416
+  },
+  {
+    "family": "Cosette",
+    "engine": "Cosette 5.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2415,
+    "id": 417
+  },
+  {
+    "family": "CeeChess",
+    "engine": "CeeChess 1.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2414,
+    "id": 418
+  },
+  {
+    "family": "Eeyore",
+    "engine": "Eeyore 1.52",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2414,
+    "id": 419
+  },
+  {
+    "family": "Snitch",
+    "engine": "Snitch 1.6.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2414,
+    "id": 420
+  },
+  {
+    "family": "Taltos",
+    "engine": "Taltos rev118",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2414,
+    "id": 421
+  },
+  {
+    "family": "Knur",
+    "engine": "Knur 20240903",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2413,
+    "id": 422
+  },
+  {
+    "family": "NoC",
+    "engine": "NoC 4.20",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2411,
+    "id": 423
+  },
+  {
+    "family": "Kiwi",
+    "engine": "Kiwi 0.6d 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2410,
+    "id": 424
+  },
+  {
+    "family": "TJchess",
+    "engine": "TJchess 1.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2406,
+    "id": 425
+  },
+  {
+    "family": "Homer",
+    "engine": "Homer 2.01",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2403,
+    "id": 426
+  },
+  {
+    "family": "Juggernaut",
+    "engine": "Juggernaut 1.18",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2402,
+    "id": 427
+  },
+  {
+    "family": "Amy",
+    "engine": "Amy 0.9.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2401,
+    "id": 428
+  },
+  {
+    "family": "Gaia",
+    "engine": "Gaia 3.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2400,
+    "id": 429
+  },
+  {
+    "family": "Teki",
+    "engine": "Teki 2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2400,
+    "id": 430
+  },
+  {
+    "family": "Bitfoot",
+    "engine": "Bitfoot 1.0.d9aeb43",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2393,
+    "id": 431
+  },
+  {
+    "family": "Oxidation",
+    "engine": "Oxidation 0.7.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2392,
+    "id": 432
+  },
+  {
+    "family": "Cmcchess",
+    "engine": "Cmcchess 2.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2389,
+    "id": 433
+  },
+  {
+    "family": "PostModernist",
+    "engine": "PostModernist 1016",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2389,
+    "id": 434
+  },
+  {
+    "family": "RomiChess",
+    "engine": "RomiChess P3n",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2387,
+    "id": 435
+  },
+  {
+    "family": "Popochin",
+    "engine": "Popochin 4.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2385,
+    "id": 436
+  },
+  {
+    "family": "byte-knight",
+    "engine": "byte-knight 3.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2385,
+    "id": 437
+  },
+  {
+    "family": "Dragon",
+    "engine": "Dragon 4.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2382,
+    "id": 438
+  },
+  {
+    "family": "Ifrit",
+    "engine": "Ifrit m1.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2382,
+    "id": 439
+  },
+  {
+    "family": "Bienchen",
+    "engine": "Bienchen 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2375,
+    "id": 440
+  },
+  {
+    "family": "Diablo",
+    "engine": "Diablo 0.5.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2375,
+    "id": 441
+  },
+  {
+    "family": "Gosu",
+    "engine": "Gosu 0.16",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2375,
+    "id": 442
+  },
+  {
+    "family": "Simplex",
+    "engine": "Simplex 0.9.8 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2374,
+    "id": 443
+  },
+  {
+    "family": "KnightDreamer",
+    "engine": "KnightDreamer 3.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2366,
+    "id": 444
+  },
+  {
+    "family": "Patzer",
+    "engine": "Patzer 3.80",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2366,
+    "id": 445
+  },
+  {
+    "family": "Tigran",
+    "engine": "Tigran 2.4n",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2366,
+    "id": 446
+  },
+  {
+    "family": "Alex",
+    "engine": "Alex 2.14a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2360,
+    "id": 447
+  },
+  {
+    "family": "Sorgenkind",
+    "engine": "Sorgenkind 0.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2360,
+    "id": 448
+  },
+  {
+    "family": "Amateur",
+    "engine": "Amateur 2.82",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2359,
+    "id": 449
+  },
+  {
+    "family": "Googleplex",
+    "engine": "Googleplex Starthinker 1.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2358,
+    "id": 450
+  },
+  {
+    "family": "Comet",
+    "engine": "Comet B68",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2354,
+    "id": 451
+  },
+  {
+    "family": "Sage",
+    "engine": "Sage 3.53",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2349,
+    "id": 452
+  },
+  {
+    "family": "Horizon",
+    "engine": "Horizon 4.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2348,
+    "id": 453
+  },
+  {
+    "family": "Thor's Hammer",
+    "engine": "Thor's Hammer 2.28",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2348,
+    "id": 454
+  },
+  {
+    "family": "Tytan",
+    "engine": "Tytan 9.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2341,
+    "id": 455
+  },
+  {
+    "family": "Cinnamon",
+    "engine": "Cinnamon 2.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2336,
+    "id": 456
+  },
+  {
+    "family": "Plisk",
+    "engine": "Plisk 0.2.7d",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2334,
+    "id": 457
+  },
+  {
+    "family": "Flux",
+    "engine": "Flux 2.2.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2321,
+    "id": 458
+  },
+  {
+    "family": "Gibbon",
+    "engine": "Gibbon 2.60a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2309,
+    "id": 459
+  },
+  {
+    "family": "Arion",
+    "engine": "Arion 1.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2303,
+    "id": 460
+  },
+  {
+    "family": "AICE",
+    "engine": "Aice 0.99.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2299,
+    "id": 461
+  },
+  {
+    "family": "Napoleon",
+    "engine": "Napoleon 1.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2299,
+    "id": 462
+  },
+  {
+    "family": "Butcher",
+    "engine": "Butcher 1.61",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2295,
+    "id": 463
+  },
+  {
+    "family": "Asterisk",
+    "engine": "Asterisk 0.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2293,
+    "id": 464
+  },
+  {
+    "family": "Amundsen",
+    "engine": "Amundsen 0.80",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2289,
+    "id": 465
+  },
+  {
+    "family": "FireFly",
+    "engine": "FireFly 2.7.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2288,
+    "id": 466
+  },
+  {
+    "family": "Der Bringer",
+    "engine": "Der Bringer 1.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2285,
+    "id": 467
+  },
+  {
+    "family": "Chezzz",
+    "engine": "Chezzz 1.0.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2284,
+    "id": 468
+  },
+  {
+    "family": "ChessKISS",
+    "engine": "ChessKISS 1.8d",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2283,
+    "id": 469
+  },
+  {
+    "family": "WChess",
+    "engine": "WChess 1.06",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2280,
+    "id": 470
+  },
+  {
+    "family": "Zeus",
+    "engine": "Zeus 1.27",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2279,
+    "id": 471
+  },
+  {
+    "family": "Kingfisher",
+    "engine": "Kingfisher 1.1.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2276,
+    "id": 472
+  },
+  {
+    "family": "Mediocre",
+    "engine": "Mediocre 0.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2273,
+    "id": 473
+  },
+  {
+    "family": "Sungorus",
+    "engine": "Sungorus 1.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2268,
+    "id": 474
+  },
+  {
+    "family": "Averno",
+    "engine": "Averno 0.81",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2266,
+    "id": 475
+  },
+  {
+    "family": "Anechka",
+    "engine": "Anechka 0.08",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2262,
+    "id": 476
+  },
+  {
+    "family": "Austerlitz",
+    "engine": "Austerlitz 1.4.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2261,
+    "id": 477
+  },
+  {
+    "family": "Rival",
+    "engine": "Rival 1.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2261,
+    "id": 478
+  },
+  {
+    "family": "Joker",
+    "engine": "Joker 1.1.14",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2260,
+    "id": 479
+  },
+  {
+    "family": "Ant",
+    "engine": "Ant 2006-F",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2259,
+    "id": 480
+  },
+  {
+    "family": "Fischerle",
+    "engine": "Fischerle 0.9.80 SE",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2259,
+    "id": 481
+  },
+  {
+    "family": "Absolute Zero",
+    "engine": "Absolute Zero 2.4.7.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2258,
+    "id": 482
+  },
+  {
+    "family": "Natwarlal",
+    "engine": "Natwarlal 0.14",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2257,
+    "id": 483
+  },
+  {
+    "family": "Matilde",
+    "engine": "Matilde 2008",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2249,
+    "id": 484
+  },
+  {
+    "family": "Chaturanga",
+    "engine": "Chaturanga 2.4.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2245,
+    "id": 485
+  },
+  {
+    "family": "Camel",
+    "engine": "Camel 1.6.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2242,
+    "id": 486
+  },
+  {
+    "family": "AliChess",
+    "engine": "AliChess 4.25",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2240,
+    "id": 487
+  },
+  {
+    "family": "chessplusplus",
+    "engine": "chessplusplus 1.2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2229,
+    "id": 488
+  },
+  {
+    "family": "Chispa",
+    "engine": "Chispa 4.0.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2228,
+    "id": 489
+  },
+  {
+    "family": "Ayito",
+    "engine": "Ayito 0.2.994",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2226,
+    "id": 490
+  },
+  {
+    "family": "Exacto",
+    "engine": "Exacto 0.e",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2210,
+    "id": 491
+  },
+  {
+    "family": "RattateChess",
+    "engine": "RattateChess 1.0 Nosferatu",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2209,
+    "id": 492
+  },
+  {
+    "family": "Esc",
+    "engine": "Esc 1.16",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2207,
+    "id": 493
+  },
+  {
+    "family": "Beowulf",
+    "engine": "Beowulf 2.4a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2202,
+    "id": 494
+  },
+  {
+    "family": "KhepriChess",
+    "engine": "KhepriChess 4.0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2202,
+    "id": 495
+  },
+  {
+    "family": "Mango Paola Ajedrez",
+    "engine": "Mango Paola Ajedrez 4.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2200,
+    "id": 496
+  },
+  {
+    "family": "Weini",
+    "engine": "Weini 0.0.23",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2197,
+    "id": 497
+  },
+  {
+    "family": "Abbess",
+    "engine": "Abbess 2022B",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2196,
+    "id": 498
+  },
+  {
+    "family": "Feuerstein",
+    "engine": "Feuerstein 0.4.6.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2191,
+    "id": 499
+  },
+  {
+    "family": "Atak",
+    "engine": "Atak 6.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2188,
+    "id": 500
+  },
+  {
+    "family": "RamJet",
+    "engine": "RamJet 0.13",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2187,
+    "id": 501
+  },
+  {
+    "family": "Buzz",
+    "engine": "Buzz 0.08",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2186,
+    "id": 502
+  },
+  {
+    "family": "SpaceDog",
+    "engine": "SpaceDog 0.97.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2184,
+    "id": 503
+  },
+  {
+    "family": "KMTChess",
+    "engine": "KMTChess 1.2.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2182,
+    "id": 504
+  },
+  {
+    "family": "Dolphin",
+    "engine": "Dolphin 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2181,
+    "id": 505
+  },
+  {
+    "family": "Tiny Chess",
+    "engine": "Tiny Chess 1.46",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2174,
+    "id": 506
+  },
+  {
+    "family": "Robocide",
+    "engine": "Robocide 20170718",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2172,
+    "id": 507
+  },
+  {
+    "family": "Adam",
+    "engine": "Adam 3.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2168,
+    "id": 508
+  },
+  {
+    "family": "OBender",
+    "engine": "OBender 03.2016",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2166,
+    "id": 509
+  },
+  {
+    "family": "Joker2",
+    "engine": "Joker2 0.7.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2165,
+    "id": 510
+  },
+  {
+    "family": "Madeleine",
+    "engine": "Madeleine 0.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2164,
+    "id": 511
+  },
+  {
+    "family": "ZCT",
+    "engine": "ZCT 0.3.2451",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2161,
+    "id": 512
+  },
+  {
+    "family": "Neurosis",
+    "engine": "Neurosis 2.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2159,
+    "id": 513
+  },
+  {
+    "family": "Amira",
+    "engine": "Amira 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2158,
+    "id": 514
+  },
+  {
+    "family": "Achillees",
+    "engine": "Achillees 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2154,
+    "id": 515
+  },
+  {
+    "family": "Baislicka",
+    "engine": "Baislicka 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2154,
+    "id": 516
+  },
+  {
+    "family": "ChessAlex",
+    "engine": "ChessAlex 2.0r4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2152,
+    "id": 517
+  },
+  {
+    "family": "Latista",
+    "engine": "Latista (Sinobyl) 1.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2152,
+    "id": 518
+  },
+  {
+    "family": "BlackBishop",
+    "engine": "BlackBishop 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2151,
+    "id": 519
+  },
+  {
+    "family": "Dorpsgek",
+    "engine": "Dorpsgek Eve's Temptation",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2151,
+    "id": 520
+  },
+  {
+    "family": "Mora",
+    "engine": "MORA 1.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2148,
+    "id": 521
+  },
+  {
+    "family": "Infrared",
+    "engine": "Infrared 2.0.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2146,
+    "id": 522
+  },
+  {
+    "family": "Alf",
+    "engine": "Alf 1.09",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2143,
+    "id": 523
+  },
+  {
+    "family": "Alarm",
+    "engine": "Alarm 0.93.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2142,
+    "id": 524
+  },
+  {
+    "family": "Embla",
+    "engine": "Embla 2.0.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2141,
+    "id": 525
+  },
+  {
+    "family": "NG-Play",
+    "engine": "NG-Play 9.87",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2140,
+    "id": 526
+  },
+  {
+    "family": "GopherCheck",
+    "engine": "GopherCheck 0.2.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2137,
+    "id": 527
+  },
+  {
+    "family": "NagaSkaki",
+    "engine": "NagaSkaki 5.12",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2136,
+    "id": 528
+  },
+  {
+    "family": "Lime",
+    "engine": "Lime 66",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2131,
+    "id": 529
+  },
+  {
+    "family": "Terra",
+    "engine": "Terra 3.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2129,
+    "id": 530
+  },
+  {
+    "family": "Soldat",
+    "engine": "Soldat III 0.187",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2125,
+    "id": 531
+  },
+  {
+    "family": "Clever Girl",
+    "engine": "Clever Girl r160",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2119,
+    "id": 532
+  },
+  {
+    "family": "Kurt",
+    "engine": "Kurt 0.9.2.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2114,
+    "id": 533
+  },
+  {
+    "family": "Little Wing",
+    "engine": "Little Wing 0.7.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2112,
+    "id": 534
+  },
+  {
+    "family": "Micah",
+    "engine": "Micah 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2108,
+    "id": 535
+  },
+  {
+    "family": "Chesley",
+    "engine": "Chesley r323",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2107,
+    "id": 536
+  },
+  {
+    "family": "ProChess",
+    "engine": "ProChess 1.02AD",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2107,
+    "id": 537
+  },
+  {
+    "family": "Stellar",
+    "engine": "Stellar 1.4.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2103,
+    "id": 538
+  },
+  {
+    "family": "KnockOut",
+    "engine": "KnockOut 0.7.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2095,
+    "id": 539
+  },
+  {
+    "family": "Blitzkrieg",
+    "engine": "Blitzkrieg rev337",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2085,
+    "id": 540
+  },
+  {
+    "family": "Parrot",
+    "engine": "Parrot 07.07.22",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2078,
+    "id": 541
+  },
+  {
+    "family": "BikJump",
+    "engine": "BikJump 2.01",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2059,
+    "id": 542
+  },
+  {
+    "family": "Clarabit",
+    "engine": "Clarabit 1.00 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2055,
+    "id": 543
+  },
+  {
+    "family": "AdaChess",
+    "engine": "AdaChess 4.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2053,
+    "id": 544
+  },
+  {
+    "family": "King's Out",
+    "engine": "King's Out 0.2.42",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2051,
+    "id": 545
+  },
+  {
+    "family": "Armageddon",
+    "engine": "Armageddon 2.308",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2040,
+    "id": 546
+  },
+  {
+    "family": "Honzovy Sachy",
+    "engine": "Honzovy Sachy 2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2038,
+    "id": 547
+  },
+  {
+    "family": "Bodo",
+    "engine": "Bodo 0.2b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2032,
+    "id": 548
+  },
+  {
+    "family": "Gunborg",
+    "engine": "Gunborg 1.35",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2027,
+    "id": 549
+  },
+  {
+    "family": "Freyr",
+    "engine": "Freyr 1.068",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2025,
+    "id": 550
+  },
+  {
+    "family": "AdroitChess",
+    "engine": "AdroitChess 0.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2020,
+    "id": 551
+  },
+  {
+    "family": "Small Potato",
+    "engine": "Small Potato 0.7.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2018,
+    "id": 552
+  },
+  {
+    "family": "Smash",
+    "engine": "Smash 1.0.3a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2017,
+    "id": 553
+  },
+  {
+    "family": "BigLion",
+    "engine": "BigLion 2.23w",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2014,
+    "id": 554
+  },
+  {
+    "family": "Jabba",
+    "engine": "Jabba 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2014,
+    "id": 555
+  },
+  {
+    "family": "Maxwell",
+    "engine": "Maxwell 3.1-3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 2008,
+    "id": 556
+  },
+  {
+    "family": "Vice",
+    "engine": "Vice 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1996,
+    "id": 557
+  },
+  {
+    "family": "Matant",
+    "engine": "Matant 5.04",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1989,
+    "id": 558
+  },
+  {
+    "family": "Ecce",
+    "engine": "Ecce 1.0 (rev. 508)",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1988,
+    "id": 559
+  },
+  {
+    "family": "Monarch",
+    "engine": "Monarch 1.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1984,
+    "id": 560
+  },
+  {
+    "family": "Goldfish",
+    "engine": "Goldfish 1.13.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1983,
+    "id": 561
+  },
+  {
+    "family": "PLP",
+    "engine": "PLP 1661571",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1982,
+    "id": 562
+  },
+  {
+    "family": "Zeta Dva",
+    "engine": "Zeta Dva 0301",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1982,
+    "id": 563
+  },
+  {
+    "family": "Squared-chess",
+    "engine": "Squared-chess 1.3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1980,
+    "id": 564
+  },
+  {
+    "family": "Mustang",
+    "engine": "Mustang 4.97",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1974,
+    "id": 565
+  },
+  {
+    "family": "Matheus",
+    "engine": "Matheus 2.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1970,
+    "id": 566
+  },
+  {
+    "family": "ChessMind",
+    "engine": "ChessMind 0.82",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1968,
+    "id": 567
+  },
+  {
+    "family": "Bestia",
+    "engine": "Bestia 0.90",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1965,
+    "id": 568
+  },
+  {
+    "family": "Arabian Knight",
+    "engine": "Arabian Knight 1.55",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1962,
+    "id": 569
+  },
+  {
+    "family": "Slibo",
+    "engine": "Slibo 0.5.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1960,
+    "id": 570
+  },
+  {
+    "family": "Schola",
+    "engine": "Schola 1.1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1959,
+    "id": 571
+  },
+  {
+    "family": "Cupcake",
+    "engine": "Cupcake 1.1a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1958,
+    "id": 572
+  },
+  {
+    "family": "Faile",
+    "engine": "Faile 1.4.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1957,
+    "id": 573
+  },
+  {
+    "family": "Wuttang",
+    "engine": "Wuttang r2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1954,
+    "id": 574
+  },
+  {
+    "family": "Bubble",
+    "engine": "Bubble 1.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1944,
+    "id": 575
+  },
+  {
+    "family": "La Dame Blanche",
+    "engine": "La Dame Blanche 2.0c",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1934,
+    "id": 576
+  },
+  {
+    "family": "BibiChess",
+    "engine": "BibiChess 0.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1930,
+    "id": 577
+  },
+  {
+    "family": "Oberon",
+    "engine": "Oberon 0.04",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1927,
+    "id": 578
+  },
+  {
+    "family": "BSC",
+    "engine": "BSC 3.9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1926,
+    "id": 579
+  },
+  {
+    "family": "Snowy",
+    "engine": "Snowy 0.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1924,
+    "id": 580
+  },
+  {
+    "family": "ALChess",
+    "engine": "ALChess 1.84",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1921,
+    "id": 581
+  },
+  {
+    "family": "Heracles",
+    "engine": "Heracles 0.6.16",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1913,
+    "id": 582
+  },
+  {
+    "family": "Dabbaba",
+    "engine": "Dabbaba 5.67",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1894,
+    "id": 583
+  },
+  {
+    "family": "BeLL",
+    "engine": "BeLL 0.0.41",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1891,
+    "id": 584
+  },
+  {
+    "family": "Sissa",
+    "engine": "Sissa 2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1890,
+    "id": 585
+  },
+  {
+    "family": "Monik",
+    "engine": "Monik 2.2.3 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1880,
+    "id": 586
+  },
+  {
+    "family": "Wowl",
+    "engine": "Wowl 1.3.8",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1878,
+    "id": 587
+  },
+  {
+    "family": "Etude",
+    "engine": "Etude 0.1.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1875,
+    "id": 588
+  },
+  {
+    "family": "Franky",
+    "engine": "Franky 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1872,
+    "id": 589
+  },
+  {
+    "family": "Micro-Max",
+    "engine": "Micro-Max 4.8 (DM-PII)",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1868,
+    "id": 590
+  },
+  {
+    "family": "MatMoi",
+    "engine": "MatMoi 7.15.0-cct 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1863,
+    "id": 591
+  },
+  {
+    "family": "Eia",
+    "engine": "Eia 0.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1859,
+    "id": 592
+  },
+  {
+    "family": "Presbyter",
+    "engine": "Presbyter 1.3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1839,
+    "id": 593
+  },
+  {
+    "family": "Clueless",
+    "engine": "Clueless 1.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1838,
+    "id": 594
+  },
+  {
+    "family": "Reger",
+    "engine": "Reger 0.09",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1829,
+    "id": 595
+  },
+  {
+    "family": "Warrior",
+    "engine": "Warrior 1.0.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1827,
+    "id": 596
+  },
+  {
+    "family": "Chessterfield",
+    "engine": "ChessterfieldCL i5a",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1821,
+    "id": 597
+  },
+  {
+    "family": "Deepov",
+    "engine": "Deepov 0.4.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1819,
+    "id": 598
+  },
+  {
+    "family": "Surprise",
+    "engine": "Surprise 4.3b13",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1814,
+    "id": 599
+  },
+  {
+    "family": "Sapeli",
+    "engine": "Sapeli 1.02",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1813,
+    "id": 600
+  },
+  {
+    "family": "MOBMAT",
+    "engine": "MOBMAT 0.903d",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1805,
+    "id": 601
+  },
+  {
+    "family": "GChess",
+    "engine": "GChess IV 0.2.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1801,
+    "id": 602
+  },
+  {
+    "family": "CDrill",
+    "engine": "CDrill 1800 build 4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1794,
+    "id": 603
+  },
+  {
+    "family": "Predateur",
+    "engine": "Predateur 2.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1772,
+    "id": 604
+  },
+  {
+    "family": "Skiull",
+    "engine": "Skiull 0.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1758,
+    "id": 605
+  },
+  {
+    "family": "Sayuri",
+    "engine": "Sayuri 2018.03.06",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1756,
+    "id": 606
+  },
+  {
+    "family": "BeRoChess",
+    "engine": "BeRoChess 1.00 32-bit",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1754,
+    "id": 607
+  },
+  {
+    "family": "Pigeon",
+    "engine": "Pigeon 1.5.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1753,
+    "id": 608
+  },
+  {
+    "family": "Roce",
+    "engine": "Roce 0.0390",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1753,
+    "id": 609
+  },
+  {
+    "family": "Ajedrez Tactico",
+    "engine": "Ajedrez Tactico 2.73b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1750,
+    "id": 610
+  },
+  {
+    "family": "Apollo",
+    "engine": "Apollo 1.2.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1744,
+    "id": 611
+  },
+  {
+    "family": "JSBam",
+    "engine": "JSBam 0.52",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1739,
+    "id": 612
+  },
+  {
+    "family": "Chenard",
+    "engine": "Chenard 2018.03.06",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1733,
+    "id": 613
+  },
+  {
+    "family": "RataAeroespacial",
+    "engine": "RataAeroespacial 0.2.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1732,
+    "id": 614
+  },
+  {
+    "family": "Ranita",
+    "engine": "Ranita 2.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1726,
+    "id": 615
+  },
+  {
+    "family": "Lodocase",
+    "engine": "Lodocase 240208",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1710,
+    "id": 616
+  },
+  {
+    "family": "Robin",
+    "engine": "Robin 0.983",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1704,
+    "id": 617
+  },
+  {
+    "family": "Ziggurat",
+    "engine": "Ziggurat 0.18",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1701,
+    "id": 618
+  },
+  {
+    "family": "Mint",
+    "engine": "Mint 2.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1699,
+    "id": 619
+  },
+  {
+    "family": "Grizzly",
+    "engine": "Grizzly 1.40.1b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1698,
+    "id": 620
+  },
+  {
+    "family": "Pulsar",
+    "engine": "Pulsar 2009-9b",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1670,
+    "id": 621
+  },
+  {
+    "family": "Zoidberg",
+    "engine": "Zoidberg 0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1664,
+    "id": 622
+  },
+  {
+    "family": "Enigma",
+    "engine": "Enigma 1.1.4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1644,
+    "id": 623
+  },
+  {
+    "family": "Kanguruh",
+    "engine": "Kanguruh 1.93",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1638,
+    "id": 624
+  },
+  {
+    "family": "Shallow",
+    "engine": "Shallow Blue 2.0.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1617,
+    "id": 625
+  },
+  {
+    "family": "Tom Thumb",
+    "engine": "Tom Thumb 0.2",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1601,
+    "id": 626
+  },
+  {
+    "family": "Laurifer",
+    "engine": "Laurifer 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1600,
+    "id": 627
+  },
+  {
+    "family": "EnkoChess",
+    "engine": "EnkoChess 290818",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1598,
+    "id": 628
+  },
+  {
+    "family": "TSCP",
+    "engine": "TSCP 1.81",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1598,
+    "id": 629
+  },
+  {
+    "family": "Spartan",
+    "engine": "Spartan 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1585,
+    "id": 630
+  },
+  {
+    "family": "Philemon",
+    "engine": "Philemon C",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1576,
+    "id": 631
+  },
+  {
+    "family": "VanillaChess",
+    "engine": "VanillaChess 2.6g",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1572,
+    "id": 632
+  },
+  {
+    "family": "SdBC",
+    "engine": "SdBC 0.5.15.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1528,
+    "id": 633
+  },
+  {
+    "family": "Rainman",
+    "engine": "Rainman 0.7.5",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1524,
+    "id": 634
+  },
+  {
+    "family": "Pulse",
+    "engine": "Pulse 1.6.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1515,
+    "id": 635
+  },
+  {
+    "family": "Monochrome",
+    "engine": "Monochrome",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1503,
+    "id": 636
+  },
+  {
+    "family": "Bullitchess",
+    "engine": "Bullitchess 1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1499,
+    "id": 637
+  },
+  {
+    "family": "Needle",
+    "engine": "Needle 0.531",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1489,
+    "id": 638
+  },
+  {
+    "family": "Casper",
+    "engine": "Casper rev4",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1479,
+    "id": 639
+  },
+  {
+    "family": "PolarChess",
+    "engine": "PolarChess 1.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1475,
+    "id": 640
+  },
+  {
+    "family": "Storm",
+    "engine": "Storm 0.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1469,
+    "id": 641
+  },
+  {
+    "family": "Darky",
+    "engine": "Darky 0.5d",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1467,
+    "id": 642
+  },
+  {
+    "family": "Damas",
+    "engine": "Damas 9",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1459,
+    "id": 643
+  },
+  {
+    "family": "IQ23",
+    "engine": "IQ23.003",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1444,
+    "id": 644
+  },
+  {
+    "family": "Cicada",
+    "engine": "Cicada 0.1",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1433,
+    "id": 645
+  },
+  {
+    "family": "MSCP",
+    "engine": "MSCP 1.6h",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1424,
+    "id": 646
+  },
+  {
+    "family": "Apep",
+    "engine": "Apep 0.1.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1373,
+    "id": 647
+  },
+  {
+    "family": "Saruman",
+    "engine": "Saruman 2017.08.10",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1358,
+    "id": 648
+  },
+  {
+    "family": "Pooky",
+    "engine": "Pooky 2.7",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1329,
+    "id": 649
+  },
+  {
+    "family": "Dreamer",
+    "engine": "Dreamer 0.3.0",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1313,
+    "id": 650
+  },
+  {
+    "family": "Hokus-Pokus",
+    "engine": "Hokus-Pokus 0.6.3",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1278,
+    "id": 651
+  },
+  {
+    "family": "Bace",
+    "engine": "BACE 4.6",
+    "eval": "",
+    "search": "",
+    "lang": "",
+    "nat": "",
+    "ccrl4015": 1276,
+    "id": 652
+  }
+];
+      var table = new Tabulator("#elox", {
+        data: tabledata,
+        sortOrderReverse: true,
+        layout: "fitData",
+        initialSort: [
+          {column:"ccrl4015", dir:"desc"},
+        ],
+        columns: [
+          {title: "Family Properties", headerHozAlign: "center", columns: [
+            {title: "Family",     field: "family",   sorter: "string"},
+            {title: "Eval",       field: "eval",     sorter: "string"},
+            {title: "Search",     field: "search",   sorter: "string"},
+            {title: "Nat",        field: "nat",      sorter: "string"},
+            {title: "Lang",       field: "lang",     sorter: "string"},
+          ]},
+          {title: "Engine", field: "engine", sorter: "string"},
+          {title: "CCRL Ratings", headerHozAlign: "center", columns: [
+            {title: "40/15", field: "ccrl4015",  sorter: "number"},
+            {title: "Blitz", field: "ccrlblitz", sorter: "number"},
+            {title: "FRC",   field: "ccrlfrc",   sorter: "number"},
+          ]},
+          {title: "Pohl Ratings", headerHozAlign: "center", columns: [
+            {title: "EAS", field: "pohleas", sorter: "number"},
+            {title: "UHO", field: "pohluho", sorter: "number"},
+          ]},
+       ]
+      });
+      //table.on("rowClick", function(e, row) {
+        //alert("Row " + row.getIndex() + " Clicked!!!!");
+      //});
+    </script>
+  </body>
+</html>
+

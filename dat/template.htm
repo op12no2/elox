@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator_site_dark.min.css" rel="stylesheet">
+    <style>
+      * {font-family: sans-serif;}
+      html, body {height: 100%; margin: 0;}
+      #elox {height: 100vh;
+    </style>
+  </head>
+  <body>
+    <div id="elox"></div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript">
+      var tabledata = [];
+      var table = new Tabulator("#elox", {
+        data: tabledata,
+        sortOrderReverse: true,
+        layout: "fitData",
+        initialSort: [
+          {column:"ccrl4015", dir:"desc"},
+        ],
+        columns: [
+          {title: "Family Properties", headerHozAlign: "center", columns: [
+            {title: "Family",     field: "family",   sorter: "string"},
+            {title: "Eval",       field: "eval",     sorter: "string"},
+            {title: "Search",     field: "search",   sorter: "string"},
+            {title: "Nat",        field: "nat",      sorter: "string"},
+            {title: "Lang",       field: "lang",     sorter: "string"},
+          ]},
+          {title: "Engine", field: "engine", sorter: "string"},
+          {title: "CCRL Ratings", headerHozAlign: "center", columns: [
+            {title: "40/15", field: "ccrl4015",  sorter: "number"},
+            {title: "Blitz", field: "ccrlblitz", sorter: "number"},
+            {title: "FRC",   field: "ccrlfrc",   sorter: "number"},
+          ]},
+          {title: "Pohl Ratings", headerHozAlign: "center", columns: [
+            {title: "EAS", field: "pohleas", sorter: "number"},
+            {title: "UHO", field: "pohluho", sorter: "number"},
+          ]},
+       ]
+      });
+      //table.on("rowClick", function(e, row) {
+        //alert("Row " + row.getIndex() + " Clicked!!!!");
+      //});
+    </script>
+  </body>
+</html>
+

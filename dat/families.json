@@ -1711,9 +1711,9 @@
     "overview": "",
     "url": "",
     "nat": "",
-    "lang": "",
-    "eval": "",
-    "search": ""
+    "lang": "C++",
+    "eval": "HCE",
+    "search": "PVS"
   },
   {
     "id": "clover",
@@ -1886,10 +1886,10 @@
     "name": "Cwtch",
     "overview": "",
     "url": "",
-    "nat": "",
-    "lang": "",
-    "eval": "",
-    "search": ""
+    "nat": "WAL",
+    "lang": "C",
+    "eval": "NNUE",
+    "search": "PVS"
   },
   {
     "id": "cyberpagno",
@@ -2436,10 +2436,10 @@
     "name": "Ethereal",
     "overview": "",
     "url": "",
-    "nat": "",
-    "lang": "",
-    "eval": "",
-    "search": ""
+    "nat": "USA",
+    "lang": "C",
+    "eval": "NNUE",
+    "search": "PVS"
   },
   {
     "id": "etude",
@@ -3943,10 +3943,10 @@
     "name": "Lozza",
     "overview": "",
     "url": "",
-    "nat": "",
-    "lang": "",
-    "eval": "",
-    "search": ""
+    "nat": "WAL",
+    "lang": "JS",
+    "eval": "NNUE",
+    "search": "PVS"
   },
   {
     "id": "luna",
@@ -4342,7 +4342,7 @@
     "nat": "",
     "lang": "",
     "eval": "",
-    "search": ""
+    "search": "MCTS"
   },
   {
     "id": "mora",
@@ -5044,9 +5044,9 @@
     "overview": "",
     "url": "",
     "nat": "",
-    "lang": "",
-    "eval": "",
-    "search": ""
+    "lang": "C++",
+    "eval": "NNUE",
+    "search": "PVS"
   },
   {
     "id": "plisk",
@@ -5211,7 +5211,7 @@
     "nat": "",
     "lang": "",
     "eval": "",
-    "search": ""
+    "search": "MCTS"
   },
   {
     "id": "prochess",
@@ -6024,7 +6024,7 @@
     "url": "",
     "nat": "",
     "lang": "",
-    "eval": "",
+    "eval": "HCE",
     "search": ""
   },
   {
@@ -6353,9 +6353,9 @@
     "overview": "",
     "url": "",
     "nat": "",
-    "lang": "",
-    "eval": "",
-    "search": ""
+    "lang": "C++",
+    "eval": "NNUE",
+    "search": "PVS"
   },
   {
     "id": "stocknemo",
@@ -6385,10 +6385,10 @@
     "name": "Stormphrax",
     "overview": "",
     "url": "",
-    "nat": "",
-    "lang": "",
-    "eval": "",
-    "search": ""
+    "nat": "ENG",
+    "lang": "C++",
+    "eval": "NNUE",
+    "search": "PVS"
   },
   {
     "id": "strelka",

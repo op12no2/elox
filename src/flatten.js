@@ -104,10 +104,7 @@ for (const { engineId, build, ratings } of rowsMap.values()) {
   const em = enginesById.get(engineId) || {};
   const label      = em.label ?? em.name ?? engineId;
   const engineUrl  = em.url ?? '';
-  const engineHtml = engineUrl
-    ? `<a href="${escapeHtml(engineUrl)}" title="${escapeHtml(engineUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
-    : escapeHtml(label);
-
+  const engineHtml = escapeHtml(label);
   const rowObj = {
     'engine-id': engineId,
     engine: engineHtml,
@@ -148,11 +145,18 @@ function headerWithInfo(label, kind) {
 }
 
 // Eval + Search with modal icon
+// columns = [];
 columns.push({
   field: 'engine',
   title: 'Engine',
   headerFilter: 'input',
-  formatter: 'html'
+  sorter: 'string',
+  formatter: 'link',
+  formatterParams: {
+    urlField: 'engine-url',
+    labelField: 'engine',
+    target: '_blank',
+  },
 });
 columns.push({ field: 'build',    title: 'Build',   headerFilter: 'input' });
 columns.push({ field: 'country',  title: 'Country', headerFilter: 'input' });
